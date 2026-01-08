@@ -197,7 +197,7 @@ function openModal(index) {
 
     // Set curl command
     const baseUrl = window.location.origin;
-    const promptUrl = `${baseUrl}{{ "/assets/prompts/" | relURL }}${meta.filename}`;
+    const promptUrl = `${baseUrl}{{ "//" | relURL }}${meta.filename}`;
     const curlCommand = getImportCommand(meta);
     document.getElementById('modalCurlCommand').textContent = curlCommand;
 
@@ -206,10 +206,7 @@ function openModal(index) {
     const copyBtn = document.getElementById('modalCopyBtn');
 
     downloadBtn.onclick = () => {
-        const link = document.createElement('a');
-        link.href = `{{ "/assets/prompts/" | relURL }}${meta.filename}`;
-        link.download = meta.filename;
-        link.click();
+        downloadPrompt(this, index);
     };
 
     copyBtn.onclick = () => {
