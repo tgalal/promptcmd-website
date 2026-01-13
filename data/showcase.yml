@@ -1,16 +1,18 @@
 - title: "Describe Once, Execute Anywhere"
   description: |
-    Define prompt as simple handlebars templates, then execute across any LLM
-    provider. Write your prompt logic once and transform into CLI programs with
-    auto-generated arguments.
+    Define prompt as simple <span class="emph">handlebars templates</span>,
+    then execute across any LLM provider. Write your prompt logic once and
+    transform into <span class="emph">CLI programs</span> with clear, usable
+    arguments.
   cast: "create"
   sub: |
     <p class="sub-title">Start with:</p>
     <div class="sub-code">promptctl create <a href="javascript:void(0)" onclick="openModal('docker-inspect-logs')">docker-inspect-logs</a></div>
 - title: "Built for the Command line"
   description: |
-    Pipe command output directly into prompts, chain through bash pipelines,
-    and compose workflows using familiar Unix patterns.
+    <span class="emph">Pipe</span> command output directly into prompts, chain
+    through <span class="emph">bash pipelines</span>, and compose workflows
+    using familiar <span class="emph">Unix patterns</span>.
   code: |
     <span class="comment"># Analyze nginx access logs and generate report</span>
     sh-5.3$ cat nginx-access-logs | \
@@ -59,9 +61,10 @@
 
 - title: "Distribute Usage"
   description: |
-    Distribute requests across multiple models with flexible load
-    balancing strategies. Split traffic evenly or based on cost to amortize
-    expenses across providers.
+    Distribute requests across <span class="emph">multiple models</span> with
+    flexible <span class="emph">load balancing strategies</span>. Split traffic
+    evenly or based on cost to <span class="emph">amortize expenses</span>
+    across providers.
   code: |
     sh-5.3$ promptctl config edit
 
@@ -84,7 +87,11 @@
 
     ~
 - title: "Monitor Usage"
-  description: "Track token consumption and throughput across all your prompts and models. Get visibility into your LLM usage patterns and make data-driven decisions about model selection and optimization."
+  description: |
+    Track <span class="emph">token consumption</span> across all your prompts
+    and models. Get visibility into your LLM usage patterns and make
+    data-driven decisions about model selection and <span
+    class="emph">optimization</span>.
   code: |
     sh-5.3$ promptctl stats
 
@@ -106,7 +113,10 @@
 
     ~
 - title: "Command your Prompts"
-  description: " Manage your entire prompt library through the intuitive promptctl CLI. List, inspect, execute, and version your prompts with simple commands—bringing DevOps discipline to your AI workflows."
+  description: |
+    Manage your entire prompt library through the intuitive <span
+    class="emph">promptctl</span> CLI. List, inspect, execute, and monitor your
+    prompts with simple commands.
   code: |
     sh-5.3$ promptctl
 
