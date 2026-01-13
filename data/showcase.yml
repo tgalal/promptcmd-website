@@ -120,7 +120,7 @@
   code: |
     sh-5.3$ promptctl
 
-    Usage: promptctl <COMMAND>
+    Usage: promptctl &lt;COMMAND&gt;
 
     Commands:
       edit     Edit an existing prompt file

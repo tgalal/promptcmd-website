@@ -21,6 +21,7 @@
 
     <title>{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }} - {{ .Site.Params.description }}{{ end }}</title>
 
+    <link rel="stylesheet" href="/vendor/asciinema/asciinema-player.css">
     {{ $cssFile := "home" }}
     {{ if .Params.page_css }}
       {{ $cssFile = .Params.page_css }}
