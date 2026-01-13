@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="/vendor/asciinema/asciinema-player.css">
 {{ partial "head.html" . }}
 <body>
     <div class="container">
@@ -12,6 +13,7 @@
         {{ partial "footer.html" . }}
     </div>
 
+    <script src="/vendor/asciinema/asciinema-player.min.js"></script>
     {{ $commonJS := resources.Get "js/common.js" | minify | fingerprint }}
     <script src="{{ $commonJS.RelPermalink }}" integrity="{{ $commonJS.Data.Integrity }}"></script>
     {{ if .Params.page_js }}

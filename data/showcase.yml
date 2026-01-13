@@ -1,0 +1,131 @@
+- title: "Describe Once, Execute Anywhere"
+  description: |
+    Define prompt as simple handlebars templates, then execute across any LLM
+    provider. Write your prompt logic once and transform into CLI programs with
+    auto-generated arguments.
+  cast: "create"
+  sub: |
+    <p class="sub-title">Start with:</p>
+    <div class="sub-code">promptctl create <a href="javascript:void(0)" onclick="openModal('docker-inspect-logs')">docker-inspect-logs</a></div>
+- title: "Built for the Command line"
+  description: |
+    Pipe command output directly into prompts, chain through bash pipelines,
+    and compose workflows using familiar Unix patterns.
+  code: |
+    <span class="comment"># Analyze nginx access logs and generate report</span>
+    sh-5.3$ cat nginx-access-logs | \
+              <a href="javascript:void(0)" onclick="openModal('nginx-report')">nginx-report</a> | \
+              <a href="javascript:void(0)" onclick="openModal('render-md')">render-md</a> --style minimal > nginx-report.html
+
+
+    <span class="comment"># Prepopulate git commit message based on diff</span>
+    sh-5.3$ git diff --staged | \
+              <a href="javascript:void(0)" onclick="openModal('commitmsg')">commitmsg</a> --style conventional | \
+              git commit -e --file -
+
+
+
+
+
+    ~
+- title: "Promptception"
+  description: |
+    Nest prompts within prompts for true <span class="emph">modularity</span>.
+    Let each prompt do one thing well, then <span class="emph">compose</span>
+    them into workflows without managing intermediate states yourself. Assign
+    each to the <span class="emph">best-fit model</span> based on complexity or
+    cost, building powerful reasoning from simple, reusable <span
+    class="emph">building blocks</span>.
+  code: |
+    sh-5.3$ promptctl cat <a href="javascript:void(0)" onclick="openModal('logs-aggregator')">logs-aggregator</a>
+
+    ---
+    ---
+    You will be given several summarize logs of several docker containers. Your
+    task is to summarize their findings in a short markdown report, grouped by
+    container as a section.
+
+    At the end of the report, make sure to highlight any problems, recommendations,
+    or actions to take.
+
+    ## Postgres:
+    {{prompt "docker-inspect-logs" container="postgres"}}
+
+    ## Nginx
+    {{prompt "docker-logs-analyzer" container="nginx"}}
+
+    ## Redis
+    {{prompt "docker-logs-analyzer" container="redis"}}
+
+- title: "Distribute Usage"
+  description: |
+    Distribute requests across multiple models with flexible load
+    balancing strategies. Split traffic evenly or based on cost to amortize
+    expenses across providers.
+  code: |
+    sh-5.3$ promptctl config edit
+
+    # Google models execute twice as much as anthropic's
+    [groups.coding_group]
+    providers = [
+      { name = "google",    weight = 2 },
+      { name = "anthropic", weight = 1 },
+    ]
+
+    ~
+
+    sh-5.3$ promptctl cat <a href="javascript:void(0)" onclick="openModal('rust-coder')">rust-coder</a>
+
+    ---
+    model: coding_group
+    ---
+    Fix the following rust code: {{STDIN}}
+
+
+    ~
+- title: "Monitor Usage"
+  description: "Track token consumption and throughput across all your prompts and models. Get visibility into your LLM usage patterns and make data-driven decisions about model selection and optimization."
+  code: |
+    sh-5.3$ promptctl stats
+
+    provider       model                         runs     prompt tokens     completion
+    anthropic      claude-opus-4-5               10       405               309
+    anthropic      claude-sonnet-4-5             7        925               844
+    google         gemini-2.5-flash              12       3035              6238
+    openai         gpt-5-mini-2025-08-07         11       4940              13953
+    openrouter     anthropic/claude-sonnet-4     3        124               103
+
+
+
+
+
+
+
+
+
+
+    ~
+- title: "Command your Prompts"
+  description: " Manage your entire prompt library through the intuitive promptctl CLI. List, inspect, execute, and version your prompts with simple commands—bringing DevOps discipline to your AI workflows."
+  code: |
+    sh-5.3$ promptctl
+
+    Usage: promptctl <COMMAND>
+
+    Commands:
+      edit     Edit an existing prompt file
+      enable   Enable a prompt
+      disable  Disable a prompt
+      create   Create a new prompt file [aliases: new]
+      list     List commands and prompts [aliases: ls]
+      cat      Print promptfile contents
+      run      Run promptfile
+      import   Import promptfile
+      stats    Print statistics
+      resolve  Resolve model name
+      config   Display and edit your config.toml
+      help     Print this message or the help of the given subcommand(s)
+
+    Options:
+      -h, --help     Print help
+      -V, --version  Print version

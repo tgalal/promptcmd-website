@@ -1,0 +1,32 @@
+<!-- Modal for expanded prompt view -->
+<div id="promptModal" class="modal">
+    <div class="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div>
+              <h2 class="modal-title" id="modalTitle"></h2>
+              <p class="modal-description" id="modalDescription"></p>
+            </div>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+
+            <div class="modal-prompt-container">
+                <pre id="modalPromptContent"></pre>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-footer-section">
+                <h3 class="modal-section-title">Quick Import</h3>
+                <div class="command-box">
+                    <code class="command-text" id="modalCurlCommand"></code>
+                </div>
+            </div>
+            <div class="modal-footer-actions">
+                <button class="action-btn import-snippet-btn" id="modalImportBtn">Import</button>
+                <button class="action-btn" id="modalDownloadBtn">Download</button>
+                <button class="action-btn secondary" id="modalCopyBtn">Copy Prompt</button>
+            </div>
+        </div>
+    </div>
+</div>
