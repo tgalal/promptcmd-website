@@ -9,7 +9,6 @@ body {
     background: $color-bg-dark;
     color: $color-text-primary;
     min-height: 100vh;
-    padding: $spacing-2xl;
 }
 
 body::before {
@@ -32,6 +31,19 @@ body::before {
 
 .container {
     max-width: $breakpoint-xl;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding-left: $spacing-2xl;
+    padding-right: $spacing-2xl;
+}
+
+footer {
+  margin-bottom: 2rem;
+}
+
+.container-fluid {
+    max-width: 100;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -96,7 +108,8 @@ button {
 
 // Responsive
 @media (max-width: $breakpoint-md) {
-    body {
-        padding: $spacing-lg;
+    .container {
+        padding-left: $spacing-lg;
+        padding-right: $spacing-lg;
     }
 }

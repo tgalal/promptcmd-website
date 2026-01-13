@@ -1,45 +1,47 @@
 {{ define "main" }}
-<div class="model-selector">
-    <div class="selector-row">
-        <div class="selector-group">
-            <label class="selector-label" for="providerSelect">Provider</label>
-            <select id="providerSelect" onchange="updateProvider()">
-                <option value="none">None/Default</option>
-                {{ range $key, $provider := .Site.Data.providers }}
-                <option value="{{ $key }}">{{ $provider.name }}</option>
-                {{ end }}
-                <option value="other">Other (manual)</option>
-            </select>
-        </div>
-        <div class="selector-group">
-            <label class="selector-label" for="modelSelect">Model</label>
-            <select id="modelSelect" onchange="updateModel()">
-                <option value="">None/Default</option>
-            </select>
-            <input type="text" id="modelInput" placeholder="Enter model name" oninput="updateModel()">
-        </div>
-    </div>
-</div>
+<div class="container">
+  <div class="model-selector">
+      <div class="selector-row">
+          <div class="selector-group">
+              <label class="selector-label" for="providerSelect">Provider</label>
+              <select id="providerSelect" onchange="updateProvider()">
+                  <option value="none">None/Default</option>
+                  {{ range $key, $provider := .Site.Data.providers }}
+                  <option value="{{ $key }}">{{ $provider.name }}</option>
+                  {{ end }}
+                  <option value="other">Other (manual)</option>
+              </select>
+          </div>
+          <div class="selector-group">
+              <label class="selector-label" for="modelSelect">Model</label>
+              <select id="modelSelect" onchange="updateModel()">
+                  <option value="">None/Default</option>
+              </select>
+              <input type="text" id="modelInput" placeholder="Enter model name" oninput="updateModel()">
+          </div>
+      </div>
+  </div>
 
-<div class="prompts-grid">
-    {{ range $index, $prompt := .Site.Data.prompts }}
-    {{ $loadPath := printf "p/%s" $prompt.filename }}
-    {{ $content := readFile (printf "static/%s" $loadPath) }}
-    <div class="prompt-card" data-prompt-index="{{ $index }}" onclick="if(!event.target.closest('.prompt-actions')) openModal({{ $index }})">
-        <div class="prompt-header">
-            <div class="prompt-name">{{ $prompt.name }}</div>
-            <div class="prompt-description">{{ $prompt.description }}</div>
-        </div>
-        <div class="prompt-snippet">
-            <pre class="prompt-content">{{ $content | htmlEscape }}</pre>
-        </div>
-        <div class="prompt-actions">
-            <button class="import-snippet-btn" onclick="event.stopPropagation(); copyImport(this, {{ $index }})">Import</button>
-            <a href="{{ printf "/p/%s" $prompt.filename | relURL }}" download class="download-btn" onclick="event.stopPropagation(); downloadPrompt(this, {{ $index }}); event.preventDefault()">Download</a>
-            <button class="copy-snippet-btn" onclick="event.stopPropagation(); copySnippet(this, {{ $index }})">Copy</button>
-        </div>
-    </div>
-    {{ end }}
+  <div class="prompts-grid">
+      {{ range $index, $prompt := .Site.Data.prompts }}
+      {{ $loadPath := printf "p/%s" $prompt.filename }}
+      {{ $content := readFile (printf "static/%s" $loadPath) }}
+      <div class="prompt-card" data-prompt-index="{{ $index }}" onclick="if(!event.target.closest('.prompt-actions')) openModal({{ $index }})">
+          <div class="prompt-header">
+              <div class="prompt-name">{{ $prompt.name }}</div>
+              <div class="prompt-description">{{ $prompt.description }}</div>
+          </div>
+          <div class="prompt-snippet">
+              <pre class="prompt-content">{{ $content | htmlEscape }}</pre>
+          </div>
+          <div class="prompt-actions">
+              <button class="import-snippet-btn" onclick="event.stopPropagation(); copyImport(this, {{ $index }})">Import</button>
+              <a href="{{ printf "/p/%s" $prompt.filename | relURL }}" download class="download-btn" onclick="event.stopPropagation(); downloadPrompt(this, {{ $index }}); event.preventDefault()">Download</a>
+              <button class="copy-snippet-btn" onclick="event.stopPropagation(); copySnippet(this, {{ $index }})">Copy</button>
+          </div>
+      </div>
+      {{ end }}
+  </div>
 </div>
 
 <!-- Modal for expanded prompt view -->

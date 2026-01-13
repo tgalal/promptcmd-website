@@ -1,101 +1,106 @@
 {{ define "main" }}
-<div class="home-header">
-    <h1>promptcmd</h1>
-    <p class="tagline">GenAI prompts as runnable programs</p>
-    <p class="subtitle">Create custom CLI commands powered by AI. No plugins, no friction. Just pure command-line magic.</p>
+<div class="container">
+  <div class="home-header">
+      <h1>promptcmd</h1>
+      <p class="tagline">GenAI prompts as runnable programs</p>
+      <p class="subtitle">Create custom CLI commands powered by AI. No plugins, no friction. Just pure command-line magic.</p>
 
-    <div class="header-links">
-        <a href="{{ "/creator/" | relURL }}" class="link-btn create">
-            Create Prompts
-        </a>
-        <a href="{{ "/prompts/" | relURL }}" class="link-btn library">
-            Browse Library
-        </a>
-        <a href="https://github.com/{{ .Site.Params.github_username }}/promptcmd" class="link-btn github" target="_blank" rel="noopener">
-            View on GitHub
-        </a>
-    </div>
-</div>
+      <div class="header-links">
+          <a href="{{ "/creator/" | relURL }}" class="link-btn create">
+              Create Prompts
+          </a>
+          <a href="{{ "/prompts/" | relURL }}" class="link-btn library">
+              Browse Library
+          </a>
+          <a href="https://github.com/{{ .Site.Params.github_username }}/promptcmd" class="link-btn github" target="_blank" rel="noopener">
+              View on GitHub
+          </a>
+      </div>
+  </div>
 
-<div class="install-section">
-    <div class="install-header">
-        <h2 class="install-title">Get Started in Seconds</h2>
-        <p class="install-subtitle">One command to install</p>
-    </div>
+  <div class="install-section">
+      <div class="install-header">
+          <h2 class="install-title">Get Started in Seconds</h2>
+          <p class="install-subtitle">One command to install</p>
+      </div>
 
-    <div class="command-box">
-        <code class="command-text" id="installCommand">curl -LsSf https://installer.promptcmd.sh | sh</code>
-        <button class="copy-btn" onclick="copyCommand()">Copy</button>
-    </div>
+      <div class="command-box">
+          <code class="command-text" id="installCommand">curl -LsSf https://installer.promptcmd.sh | sh</code>
+          <button class="copy-btn" onclick="copyCommand()">Copy</button>
+      </div>
 
-    <div class="examples">
-        <div class="example">
-            <div class="example-title">Translate on the fly</div>
-            <code class="example-code">$ echo "Hello!" | translate --to German</code>
-        </div>
-        <div class="example">
-            <div class="example-title">Code assistance</div>
-            <code class="example-code">$ askrust "How do I create a loop?"</code>
-        </div>
-        <div class="example">
-            <div class="example-title">Natural language</div>
-            <code class="example-code">$ How can I sort this JSON file</code>
-        </div>
-    </div>
-</div>
+      <div class="examples">
+          <div class="example">
+              <div class="example-title">Translate on the fly</div>
+              <code class="example-code">$ echo "Hello!" | translate --to German</code>
+          </div>
+          <div class="example">
+              <div class="example-title">Code assistance</div>
+              <code class="example-code">$ askrust "How do I create a loop?"</code>
+          </div>
+          <div class="example">
+              <div class="example-title">Natural language</div>
+              <code class="example-code">$ How can I sort this JSON file</code>
+          </div>
+      </div>
+  </div>
 
-<div class="features-section">
-    <div class="features-header">
-        <h2 class="features-title">See It In Action</h2>
-    </div>
+  <div class="features-section">
+      <div class="features-header">
+          <h2 class="features-title">See It In Action</h2>
+      </div>
 
-    <div class="feature-showcase">
+      <div class="feature-showcase">
 
-      {{ range $index, $element := .Site.Data.showcase }}
-        <div class="feature-item {{ if modBool $index 2 }}reverse{{ end }}">
-            <div class="feature-image">
-              {{ if $element.cast }}
-              <div class="cast-container" data-cast="{{ $element.cast }}"></div>
-              {{ else if $element.code }}
-                <div class="code-container">
-                <pre>{{ $element.code | safeHTML }}</pre>
+        {{ range $index, $element := .Site.Data.showcase }}
+          <div class="feature-item {{ if modBool $index 2 }}reverse{{ end }}">
+              <div class="feature-image">
+                {{ if $element.cast }}
+                <div class="cast-container" data-cast="{{ $element.cast }}"></div>
+                {{ else if $element.code }}
+                  <div class="code-container">
+                  <pre>{{ $element.code | safeHTML }}</pre>
+                </div>
+                {{ end }}
               </div>
-              {{ end }}
-            </div>
-            <div class="feature-content">
-            <h3 class="feature-title"> {{ $element.title }} </h3>
-                <p class="feature-description">
-              {{ $element.description | safeHTML }}
+              <div class="feature-content">
+              <h3 class="feature-title"> {{ $element.title }} </h3>
+                  <p class="feature-description">
+                {{ $element.description | safeHTML }}
+                  </p>
+                  {{ $element.sub | safeHTML }}
+              </div>
+          </div>
+        {{ end }}
+
+
+
+
+          <!--div class="feature-item">
+              <div class="feature-image">
+  <!--iframe
+            src="/cast.html"
+            scrolling="no"
+            allowfullscreen="true" style="overflow: visible; margin: 0px; border:
+            0px; width: 100%; height: 100%; float: none; visibility:
+            visible;" title="Terminal session recording"></iframe>
+              </div>
+              <div class="feature-content">
+                  <h3 class="feature-title">Promptception</h3>
+                  <p class="feature-description">
+                    Chain LLM outputs together to create sophisticated workflows. Use one
+                    prompt's insights as input for the next, building complex reasoning
+                    pipelines without managing intermediate states yourself.
                 </p>
-                {{ $element.sub | safeHTML }}
-            </div>
-        </div>
-      {{ end }}
-
-
-
-
-        <!--div class="feature-item">
-            <div class="feature-image">
-<!--iframe
-          src="/cast.html"
-          scrolling="no"
-          allowfullscreen="true" style="overflow: visible; margin: 0px; border:
-          0px; width: 100%; height: 100%; float: none; visibility:
-          visible;" title="Terminal session recording"></iframe>
-            </div>
-            <div class="feature-content">
-                <h3 class="feature-title">Promptception</h3>
-                <p class="feature-description">
-                  Chain LLM outputs together to create sophisticated workflows. Use one
-                  prompt's insights as input for the next, building complex reasoning
-                  pipelines without managing intermediate states yourself.
-              </p>
-            </div>
-        </div-->
-    </div>
+              </div>
+          </div-->
+      </div>
+  </div>
+  {{ partial "promptmodal.html" . }}
 </div>
-{{ partial "promptmodal.html" . }}
+<div class="container-fluid">
+
+</div>
 <script>
 window.promptsData = {{ .Site.Data.prompts }};
 
