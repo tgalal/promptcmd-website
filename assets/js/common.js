@@ -20,8 +20,8 @@ function escapeHtml(text) {
 }
 
 // Copy command for home page
-function copyCommand() {
-    const command = document.getElementById('installCommand').textContent;
+function copyCommand(elementId = 'installCommand') {
+    const command = document.getElementById(elementId).textContent;
     const btn = event.target;
     copyToClipboard(command, btn);
 }

@@ -142,6 +142,109 @@
     }
 }
 
+// CTA Section
+.cta-section {
+    padding: $spacing-3xl 0;
+    margin-top: $spacing-3xl;
+    margin-bottom: $spacing-3xl;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background: $color-bg-panel;
+    border-radius: $border-radius-lg;
+    padding: $spacing-3xl $spacing-2xl;
+    border: 1px solid $color-border;
+    box-shadow: 0 0 60px rgba(189, 147, 249, 0.15);
+}
+
+.cta-title {
+    font-size: 2rem;
+    color: $color-purple;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+    line-height: 1.2;
+
+    &::before {
+        content: '$ ';
+        color: $color-green;
+        font-family: $font-mono;
+    }
+}
+
+.cta-subtitle {
+    font-size: 1.1rem;
+    color: $color-text-muted;
+    margin-bottom: $spacing-2xl;
+}
+
+.cta-command {
+    margin-bottom: $spacing-2xl;
+}
+
+.cta-links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    align-items: center;
+}
+
+.cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-md $spacing-lg;
+    background: $color-bg-black;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-md;
+    color: $color-green;
+    font-family: $font-mono;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: $transition-fast;
+    min-width: 280px;
+    justify-content: center;
+
+    &:hover {
+        border-color: $color-purple;
+        background: rgba($color-purple, 0.1);
+        color: $color-pink;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(189, 147, 249, 0.2);
+
+        .cta-link-icon {
+            transform: translateX(4px);
+        }
+    }
+}
+
+.cta-link-icon {
+    transition: $transition-fast;
+    color: $color-pink;
+    font-weight: bold;
+}
+
+@media (max-width: $breakpoint-md) {
+    .cta-content {
+        padding: $spacing-2xl $spacing-lg;
+    }
+
+    .cta-title {
+        font-size: 1.5rem;
+    }
+
+    .cta-subtitle {
+        font-size: 1rem;
+    }
+
+    .cta-link {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
 .home-header {
     text-align: center;
     padding: $spacing-2xl 0 $spacing-xl;
