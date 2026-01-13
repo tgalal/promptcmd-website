@@ -1,7 +1,7 @@
 ---
 input:
   schema:
-    style?: string, One of [minimal, github, blog, dark]
+    style(enum)?: [minimal, github, blog, dark]
 output:
   format: text
 ---

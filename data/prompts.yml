@@ -1,7 +1,15 @@
 - name: How
   filename: How.prompt
   description: Ask "how" questions and get brief, straight-to-the-point answers from AI
-
+- name: docker-inspect-logs
+  filename: docker-inspect-logs.prompt
+  description: Analyze docker logs for a given container name and report problems
+- name: logs-aggregator
+  filename: logs-aggregator.prompt
+  description: Aggregate log reports from nested prompts
+- name: nginx-report
+  filename: nginx-report.prompt
+  description: Analyze nginx access logs to generate a structured markdown report
 - name: commitmsg
   filename: commitmsg.prompt
   description: Generate commit messages from git diffs in conventional or simple format
@@ -9,6 +17,10 @@
 - name: render-md
   filename: render-md.prompt
   description: Render markdown content with different styles
+
+- name: rust-coder
+  filename: rust-coder.prompt
+  description: Fix problems in rust code
 
 - name: sqlhelper
   filename: sqlhelper.prompt
