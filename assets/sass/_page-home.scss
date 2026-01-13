@@ -1,13 +1,146 @@
 // Home Page Styles
 
-// .comparison-section {
-//     height: 300px;
-//     // background: #bd93f9;
-//     // background: #50fa7b;
-//     background: #1a1a1a;
-//     box-shadow: inset 0 0 10px #50fa7b22;
-//     // background: linear-gradient(135deg,rgba(189,147,249,.2) 0%,#50fa7b22 100%)
-// }
+.comparison-section {
+    background: linear-gradient(135deg, rgba($color-purple, 0.08) 0%, rgba($color-green, 0.08) 100%);
+    padding: $spacing-3xl 0;
+    margin-top: $spacing-3xl;
+    box-shadow: inset 0 2px 20px rgba($color-green, 0.1);
+}
+
+.comparison-wrapper {
+    max-width: $breakpoint-xl;
+    margin: 0 auto;
+    padding: 0 $spacing-2xl;
+}
+
+.comparison-title {
+    text-align: center;
+    font-size: 2rem;
+    color: $color-green;
+    font-weight: 700;
+    margin-bottom: $spacing-2xl;
+
+    &::before {
+        content: '# ';
+        color: $color-text-muted;
+    }
+}
+
+.comparison-table-container {
+    overflow-x: auto;
+    border-radius: $border-radius-lg;
+    background: $color-bg-panel;
+    border: 1px solid $color-border;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.text-start {
+    text-align: left;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: $font-sans;
+    font-size: 0.9rem;
+
+    thead {
+        background: linear-gradient(135deg, rgba($color-purple, 0.3) 0%, rgba($color-pink, 0.2) 100%);
+        border-bottom: 2px solid $color-purple;
+
+        th {
+            padding: $spacing-lg $spacing-md;
+            text-align: left;
+            font-weight: 700;
+            color: $color-text-primary;
+            font-family: $font-mono;
+
+            &.feature-col {
+                color: $color-purple;
+                font-size: 1rem;
+            }
+
+            &.tool-col {
+                color: $color-green;
+                text-align: center;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid $color-border;
+            transition: $transition-fast;
+
+            &:hover {
+                background: rgba($color-purple, 0.05);
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        td {
+            padding: $spacing-md;
+            color: $color-text-primary;
+
+            &.feature-name {
+                font-weight: 600;
+                color: $color-pink;
+                font-family: $font-mono;
+                font-size: 0.85rem;
+            }
+
+            &.tool-value {
+                text-align: center;
+                color: $color-text-muted;
+                font-size: 0.85rem;
+
+                &:not(:empty) {
+                    color: $color-text-primary;
+                }
+            }
+
+            &.tool-value.text-start {
+              text-align: left;
+            }
+        }
+    }
+}
+
+.check-yes {
+    color: $color-green;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.check-no {
+    color: #ff5555;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+// Mobile responsive for comparison table
+@media (max-width: $breakpoint-md) {
+    .comparison-table-container {
+        overflow-x: scroll;
+    }
+
+    .comparison-table {
+        font-size: 0.75rem;
+
+        thead th {
+            padding: $spacing-md $spacing-sm;
+            font-size: 0.8rem;
+        }
+
+        tbody td {
+            padding: $spacing-sm;
+            font-size: 0.75rem;
+        }
+    }
+}
 
 .home-header {
     text-align: center;
