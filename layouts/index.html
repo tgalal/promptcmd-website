@@ -98,7 +98,7 @@
   </div>
   {{ partial "promptmodal.html" . }}
 </div>
-<div class="container-fluid comparison-section">
+<div id="comparison" class="container-fluid comparison-section">
   <div class="comparison-wrapper">
     <h2 class="comparison-title">Related Tools</h2>
     <div class="comparison-table-container">
@@ -107,14 +107,14 @@
           <tr>
             <th class="feature-col"></th>
             {{ range .Site.Data.comparison.tools }}
-            <th class="tool-col">{{ . }}</th>
+            <th class="tool-col">{{ . | safeHTML }}</th>
             {{ end }}
           </tr>
         </thead>
         <tbody>
           {{ range .Site.Data.comparison.features }}
           <tr>
-            <td class="feature-name">{{ .name }}</td>
+            <td class="feature-name">{{ .name | safeHTML }}</td>
             <td class="tool-value {{.class}}">{{ .promptcmd | replaceRE "(?i)yes" "<span class=\"check-yes\">✓</span>" | replaceRE "(?i)^no$" "<span class=\"check-no\">✗</span>" | safeHTML }}</td>
             <td class="tool-value {{.class}}">{{ .llm | replaceRE "(?i)^yes$" "<span class=\"check-yes\">✓</span>" | replaceRE "(?i)^no$" "<span class=\"check-no\">✗</span>" | safeHTML }}</td>
             <td class="tool-value {{.class}}">{{ .runprompt | replaceRE "(?i)^yes$" "<span class=\"check-yes\">✓</span>" | replaceRE "(?i)^no$" "<span class=\"check-no\">✗</span>" | safeHTML }}</td>

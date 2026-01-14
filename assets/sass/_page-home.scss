@@ -63,6 +63,15 @@
             &.tool-col {
                 color: $color-green;
                 text-align: center;
+
+                a {
+                  color: $color-green;
+                  font-weight: normal;
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
             }
         }
     }
@@ -96,6 +105,7 @@
                 text-align: center;
                 color: $color-text-muted;
                 font-size: 0.85rem;
+                text-wrap: nowrap;
 
                 &:not(:empty) {
                     color: $color-text-primary;

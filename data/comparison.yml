@@ -1,47 +1,54 @@
 tools:
   - promptcmd
-  - llm
-  - runprompt
-  - claude-switcher
+  - <a href="https://github.com/simonw/llm" target="_blank">llm</a>
+  - <a href="https://github.com/chr15m/runprompt" target="_blank">runprompt</a>
+  - <a href="https://github.com/andisearch/claude-switcher" target="_blank">claude-switcher</a>
 
 features:
   - name: "Usage"
     # class: "text-start"
     promptcmd: |
-      echo "hello world" | translate --to DE<br>
-      echo "hello world" | promptctl run translate -- --to DE<br>
-      echo "hello world" | ./translate.prompt
-    runprompt: ""
-    llm: ""
+      echo "hello world" | translate --to DE<br />
+      echo "hello world" | promptcmd translate.prompt --to DE<br />
+      echo "hello world" | ./translate.prompt --to DE
+      echo "hello world" | promptctl run translate -- --to DE<br />
+    runprompt: |
+      echo '{"to": "DE"}' | ./runprompt translate.prompt<br />
+      echo '{"to": "DE"}' | ./translate.prompt
+    llm: |
+      echo "hello world" | llm -t translate -p to DE
     claude_switcher: ""
   - name: "Prompt Files (Templating)"
-    promptcmd: "Dotprompt (picoschema + handlebars)"
-    runprompt: "Dotprompt (picoschema + handlebars)"
+    promptcmd: "Dotprompt<br />(picoschema + handlebars)"
+    runprompt: "Dotprompt<br />(picoschema + handlebars)"
     llm: "yaml"
     claude_switcher: "markdown"
-  - name: "Direct Prompt file execution"
+  - name: "Direct Prompt File Execution"
     promptcmd: "shebang<br>symlink in PATH"
     runprompt: "shebang"
     llm: "no"
     claude_switcher: "shebang"
-  - name: "Parameter"
-    promptcmd: "(typed) command line arguments"
-    runprompt: "json"
-    llm: "-p key value"
+  - name: "Parameters"
+    promptcmd: |
+      Standard-style command line arguments<br />
+      Typed: strings, numbers, boolean flags, choices<br />
+      Optional description for each argument
+    runprompt: "JSON-parseable strings"
+    llm: "-p key value<br />Strings only<br />No description"
     claude_switcher: "no"
   - name: "History/Statistics"
     promptcmd: "Stats tracking (token/cost monitoring)."
     runprompt: "no"
     llm: "DB for all history"
-    claude_switcher: "Session-scoped resume/continuity"
+    claude_switcher: "no"
   - name: "Prompt Management"
     promptcmd: "yes <small>(via promptctl)</small>"
     runprompt: "no"
     llm: "yes"
     claude_switcher: "no"
   - name: "Model Selection"
-    promptcmd: "global, per provider, per model, in prompt file, or automatically via load balancer"
-    runprompt: "in promptfile or as arguments to executing command"
+    promptcmd: "global, per provider, per model, <br/ >in prompt file, or automatically via load balancer"
+    runprompt: "in prompt file's frontmatter<br />or argument at execution"
     llm: ""
     claude_switcher: ""
   - name: "Chat mode"
@@ -58,7 +65,7 @@ features:
     promptcmd: "yes"
     runprompt: "yes"
     llm: ""
-    claude_switcher: ""
+    claude_switcher: "Session-scoped<br />for resumption"
   - name: "Tool Calling"
     promptcmd: "not yet"
     runprompt: "yes"
