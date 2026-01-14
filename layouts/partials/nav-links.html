@@ -5,8 +5,8 @@
     {{ if ne .RelPermalink "/creator/" }}
     <a href="{{ "/creator/" | relURL }}" class="nav-btn">Creator</a>
     {{ end }}
-    {{ if ne .RelPermalink "/prompts/" }}
-    <a href="{{ "/prompts/" | relURL }}" class="nav-btn">Library</a>
+    {{ if ne .RelPermalink "/lib/" }}
+    <a href="{{ "/lib/" | relURL }}" class="nav-btn">Library</a>
     {{ end }}
     <a href="https://github.com/{{ .Site.Params.github_username }}/promptcmd" class="nav-btn" target="_blank" rel="noopener">GitHub</a>
 </div>
