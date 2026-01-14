@@ -21,12 +21,57 @@
   <div class="install-section">
       <div class="install-header">
           <h2 class="install-title">Get Started in Seconds</h2>
-          <p class="install-subtitle">One command to install</p>
+          <p class="install-subtitle">Choose your installation method</p>
       </div>
 
-      <div class="command-box">
-          <code class="command-text" id="installCommand">curl -LsSf https://installer.promptcmd.sh | sh</code>
-          <button class="copy-btn" onclick="copyCommand()">Copy</button>
+      <div class="platform-tabs">
+          <button class="platform-tab" data-platform="shell" onclick="switchPlatform('shell')">
+              Shell Installer
+          </button>
+          <button class="platform-tab" data-platform="homebrew" onclick="switchPlatform('homebrew')">
+              Homebrew
+          </button>
+          <button class="platform-tab" data-platform="powershell" onclick="switchPlatform('powershell')">
+              PowerShell
+          </button>
+          <button class="platform-tab" data-platform="msi" onclick="switchPlatform('msi')">
+              Windows MSI
+          </button>
+      </div>
+
+      <div class="install-methods">
+          <div class="install-method" data-platform="shell">
+              <div class="command-box">
+                  <code class="command-text">curl -LsSf https://installer.promptcmd.sh | sh</code>
+                  <button class="copy-btn" onclick="copyCommand(event)">Copy</button>
+              </div>
+              <p class="install-note">For Linux and macOS</p>
+          </div>
+
+          <div class="install-method" data-platform="homebrew">
+              <div class="command-box">
+                  <code class="command-text">brew install tgalal/tap/promptcmd</code>
+                  <button class="copy-btn" onclick="copyCommand(event)">Copy</button>
+              </div>
+              <p class="install-note">For macOS via Homebrew</p>
+          </div>
+
+          <div class="install-method" data-platform="powershell">
+              <div class="command-box">
+                  <code class="command-text">powershell -ExecutionPolicy Bypass -c "irm https://installer-ps1.promptcmd.sh | iex"</code>
+                  <button class="copy-btn" onclick="copyCommand(event)">Copy</button>
+              </div>
+              <p class="install-note">For Windows via PowerShell</p>
+          </div>
+
+          <div class="install-method" data-platform="msi">
+              <div class="command-box">
+                  <a href="https://installer-msi.promptcmd.sh" class="download-btn" target="_blank" rel="noopener">
+                      Download MSI Installer
+                  </a>
+              </div>
+              <p class="install-note">For Windows via MSI package</p>
+          </div>
       </div>
 
       <div class="examples">
@@ -132,9 +177,50 @@
     <h2 class="cta-title">Ready to Transform Your Workflow?</h2>
     <p class="cta-subtitle">Start building AI-powered commands in minutes</p>
 
-    <div class="command-box cta-command">
-      <code class="command-text" id="ctaInstallCommand">curl -LsSf https://installer.promptcmd.sh | sh</code>
-      <button class="copy-btn" onclick="copyCommand('ctaInstallCommand')">Copy</button>
+    <div class="platform-tabs cta-tabs">
+        <button class="platform-tab" data-platform="shell" onclick="switchPlatform('shell', true)">
+            Shell
+        </button>
+        <button class="platform-tab" data-platform="homebrew" onclick="switchPlatform('homebrew', true)">
+            Homebrew
+        </button>
+        <button class="platform-tab" data-platform="powershell" onclick="switchPlatform('powershell', true)">
+            PowerShell
+        </button>
+        <button class="platform-tab" data-platform="msi" onclick="switchPlatform('msi', true)">
+            MSI
+        </button>
+    </div>
+
+    <div class="install-methods cta-install-methods">
+        <div class="install-method" data-platform="shell">
+            <div class="command-box cta-command">
+                <code class="command-text">curl -LsSf https://installer.promptcmd.sh | sh</code>
+                <button class="copy-btn" onclick="copyCommand(event)">Copy</button>
+            </div>
+        </div>
+
+        <div class="install-method" data-platform="homebrew">
+            <div class="command-box cta-command">
+                <code class="command-text">brew install tgalal/tap/promptcmd</code>
+                <button class="copy-btn" onclick="copyCommand(event)">Copy</button>
+            </div>
+        </div>
+
+        <div class="install-method" data-platform="powershell">
+            <div class="command-box cta-command">
+                <code class="command-text">powershell -ExecutionPolicy Bypass -c "irm https://installer-ps1.promptcmd.sh | iex"</code>
+                <button class="copy-btn" onclick="copyCommand(event)">Copy</button>
+            </div>
+        </div>
+
+        <div class="install-method" data-platform="msi">
+            <div class="command-box cta-command">
+                <a href="https://installer-msi.promptcmd.sh" class="download-btn" target="_blank" rel="noopener">
+                    Download MSI Installer
+                </a>
+            </div>
+        </div>
     </div>
 
     <div class="cta-links">

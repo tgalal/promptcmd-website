@@ -644,6 +644,74 @@ div.ap-wrapper div.ap-player {
     font-size: 0.85rem;
 }
 
+.platform-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.platform-tab {
+    padding: 0.5rem 1rem;
+    background: $color-bg-black;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-md;
+    color: $color-text-muted;
+    font-family: $font-mono;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: $transition-fast;
+
+    &:hover {
+        border-color: $color-purple;
+        color: $color-text-primary;
+        background: rgba($color-purple, 0.1);
+    }
+
+    &.active {
+        background: linear-gradient(135deg, rgba($color-purple, 0.3) 0%, rgba($color-pink, 0.2) 100%);
+        border-color: $color-purple;
+        color: $color-green;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(189, 147, 249, 0.2);
+    }
+}
+
+.install-methods {
+    position: relative;
+    min-height: 120px;
+}
+
+.install-method {
+    display: none;
+
+    &.active {
+        display: block;
+        animation: fadeIn 0.3s ease-in;
+    }
+}
+
+.install-note {
+    text-align: center;
+    color: $color-text-muted;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    font-family: $font-mono;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .command-box {
     display: flex;
     align-items: center;
@@ -652,7 +720,6 @@ div.ap-wrapper div.ap-player {
     padding: 1.25rem;
     font-size: 1rem;
     border: 1px solid $color-border;
-    margin-bottom: $spacing-lg;
     position: relative;
 
     /*&::before {
@@ -673,10 +740,48 @@ div.ap-wrapper div.ap-player {
     font-weight: 500;
 }
 
+.download-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, $color-purple 0%, $color-pink 100%);
+    color: $color-text-primary;
+    font-family: $font-mono;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: $border-radius-md;
+    text-decoration: none;
+    transition: $transition-fast;
+    border: 1px solid transparent;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(189, 147, 249, 0.4);
+        border-color: $color-green;
+    }
+}
+
+.cta-tabs {
+    margin-bottom: 1.5rem;
+}
+
+.cta-install-methods {
+    margin-bottom: $spacing-2xl;
+    min-height: 80px;
+}
+
 @media (max-width: $breakpoint-md) {
     .command-box {
         flex-direction: column;
         gap: $spacing-lg;
         padding: 1.25rem;
+    }
+
+    .platform-tabs {
+        gap: 0.35rem;
+    }
+
+    .platform-tab {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.75rem;
     }
 }
