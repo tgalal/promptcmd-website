@@ -34,8 +34,8 @@ function detectPlatform() {
 
     // Check for macOS
     if (platform.includes('mac') || userAgent.includes('mac')) {
-        // Prefer homebrew for macOS users
-        return 'homebrew';
+        // Prefer shell for macOS users
+        return 'shell';
     }
 
     // Check for Windows
