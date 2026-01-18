@@ -17,15 +17,16 @@ h1 {
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1;
-    background: linear-gradient(135deg, $color-blue-light 0%, $color-teal 100%);
+    background: linear-gradient(135deg, $color-purple 0%, $color-pink 50%, $color-green 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 
     &::before {
         content: '$ ';
-        color: $color-text-muted;
+        color: $color-green;
         opacity: 0.7;
+        -webkit-text-fill-color: $color-green;
     }
 }
 
@@ -64,7 +65,7 @@ h1 {
     transition: $transition-fast;
 
     &:hover {
-        border-color: $color-blue;
+        border-color: $color-purple;
         background: $color-bg-panel;
         box-shadow: $shadow-sm;
         transform: translateY(-1px);
@@ -97,14 +98,14 @@ h1 {
 .panel-title {
     font-size: 1rem;
     font-weight: 700;
-    color: $color-blue-light;
+    color: $color-purple-light;
     margin-bottom: $spacing-lg;
     font-family: $font-mono;
 }
 
 // Buttons
 .action-btn, .copy-btn, .download-btn, .copy-snippet-btn, .import-snippet-btn {
-    background: $color-blue;
+    background: $color-purple;
     border: none;
     color: #ffffff;
     padding: 0.625rem $spacing-lg;
@@ -116,24 +117,24 @@ h1 {
     box-shadow: $shadow-sm;
 
     &:hover {
-        background: $color-blue-light;
+        background: $color-purple-light;
         box-shadow: $shadow-md;
     }
 
     &.secondary {
         background: $color-bg-elevated;
-        color: $color-emerald;
-        border: 1px solid $color-emerald;
+        color: $color-green;
+        border: 1px solid $color-green;
         box-shadow: none;
 
         &:hover {
-            background: $color-emerald;
+            background: $color-green;
             color: #ffffff;
         }
     }
 
     &.copied {
-        background: $color-emerald;
+        background: $color-green;
         color: #ffffff;
     }
 }
@@ -147,37 +148,37 @@ h1 {
 
 .copy-snippet-btn {
     background: $color-bg-elevated;
-    border: 1px solid $color-emerald;
-    color: $color-emerald;
+    border: 1px solid $color-green;
+    color: $color-green;
     padding: $spacing-sm 0.75rem;
     font-size: 0.8rem;
     box-shadow: none;
 
     &:hover {
-        background: $color-emerald;
+        background: $color-green;
         color: #ffffff;
     }
 
     &.copied {
-        background: $color-emerald;
+        background: $color-green;
         color: #ffffff;
     }
 }
 
 .import-snippet-btn {
-    background: $color-emerald;
+    background: $color-green;
     color: #ffffff;
     padding: $spacing-sm 0.75rem;
     font-size: 0.8rem;
-    border: 1px solid $color-emerald;
+    border: 1px solid $color-green;
 
     &:hover {
         background: $color-bg-elevated;
-        color: $color-emerald;
+        color: $color-green;
     }
 
     &.copied {
-        background: $color-emerald;
+        background: $color-green;
         color: #ffffff;
     }
 }
@@ -195,7 +196,7 @@ h1 {
     cursor: pointer;
 
     &:hover {
-        border-color: $color-blue;
+        border-color: $color-purple;
         box-shadow: $shadow-md;
         transform: translateY(-2px);
     }
@@ -213,7 +214,7 @@ h1 {
 .prompt-name {
     font-size: 1rem;
     font-weight: 700;
-    color: $color-blue-light;
+    color: $color-purple-light;
     margin-bottom: 0.25rem;
     font-family: $font-mono;
 }
@@ -245,7 +246,7 @@ h1 {
 
 // Syntax highlighting
 .yaml-key {
-    color: $color-emerald;
+    color: $color-green;
 }
 
 .yaml-value {
@@ -257,7 +258,7 @@ h1 {
 }
 
 .template-text {
-    color: $color-teal;
+    color: $color-purple-light;
 }
 
 // Footer
@@ -329,7 +330,7 @@ footer {
 .modal-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: $color-blue-light;
+    color: $color-purple-light;
     font-family: $font-mono;
     margin: 0;
 
@@ -380,7 +381,7 @@ footer {
 .modal-section-title {
     font-size: 0.85rem;
     font-weight: 600;
-    color: $color-blue-light;
+    color: $color-purple-light;
     margin-bottom: $spacing-sm;
     text-transform: uppercase;
     letter-spacing: 0.05em;

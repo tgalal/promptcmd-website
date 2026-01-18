@@ -1,10 +1,10 @@
 // Home Page Styles
 
 .comparison-section {
-    background: linear-gradient(135deg, rgba($color-blue, 0.05) 0%, rgba($color-teal, 0.05) 100%);
+    background: linear-gradient(135deg, rgba($color-purple, 0.05) 0%, rgba($color-pink, 0.05) 100%);
     padding: $spacing-3xl 0;
     margin-top: $spacing-3xl;
-    box-shadow: inset 0 2px 20px rgba($color-teal, 0.08);
+    box-shadow: inset 0 2px 20px rgba($color-purple, 0.08);
 }
 
 .comparison-wrapper {
@@ -16,7 +16,7 @@
 .comparison-title {
     text-align: center;
     font-size: 2rem;
-    color: $color-blue-light;
+    color: $color-purple-light;
     font-weight: 700;
     margin-bottom: $spacing-2xl;
 
@@ -45,8 +45,8 @@
     font-size: 0.9rem;
 
     thead {
-        background: linear-gradient(135deg, rgba($color-blue, 0.15) 0%, rgba($color-teal, 0.1) 100%);
-        border-bottom: 2px solid $color-blue;
+        background: linear-gradient(135deg, rgba($color-purple, 0.15) 0%, rgba($color-pink, 0.1) 100%);
+        border-bottom: 2px solid $color-purple;
 
         th {
             padding: $spacing-lg $spacing-md;
@@ -56,16 +56,16 @@
             font-family: $font-mono;
 
             &.feature-col {
-                color: $color-blue-light;
+                color: $color-purple-light;
                 font-size: 1rem;
             }
 
             &.tool-col {
-                color: $color-emerald;
+                color: $color-green;
                 text-align: center;
 
                 a {
-                  color: $color-emerald;
+                  color: $color-green;
                   font-weight: normal;
 
                   &:hover {
@@ -82,7 +82,7 @@
             transition: $transition-fast;
 
             &:hover {
-                background: rgba($color-blue, 0.04);
+                background: rgba($color-purple, 0.04);
             }
 
             &:last-child {
@@ -96,7 +96,7 @@
 
             &.feature-name {
                 font-weight: 600;
-                color: $color-blue-light;
+                color: $color-purple-light;
                 font-family: $font-mono;
                 font-size: 0.85rem;
             }
@@ -120,7 +120,7 @@
 }
 
 .check-yes {
-    color: $color-emerald;
+    color: $color-green;
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -172,14 +172,14 @@
 
 .cta-title {
     font-size: 2rem;
-    color: $color-blue-light;
+    color: $color-purple-light;
     font-weight: 700;
     margin-bottom: $spacing-md;
     line-height: 1.2;
 
     &::before {
         content: '$ ';
-        color: $color-emerald;
+        color: $color-green;
         font-family: $font-mono;
     }
 }
@@ -209,7 +209,7 @@
     background: $color-bg-elevated;
     border: 1px solid $color-border;
     border-radius: $border-radius-md;
-    color: $color-emerald;
+    color: $color-green;
     font-family: $font-mono;
     font-size: 0.9rem;
     font-weight: 600;
@@ -218,9 +218,9 @@
     justify-content: center;
 
     &:hover {
-        border-color: $color-blue;
-        background: rgba($color-blue, 0.1);
-        color: $color-blue-light;
+        border-color: $color-purple;
+        background: rgba($color-purple, 0.1);
+        color: $color-purple-light;
         transform: translateY(-2px);
         box-shadow: $shadow-md;
 
@@ -232,7 +232,7 @@
 
 .cta-link-icon {
     transition: $transition-fast;
-    color: $color-teal;
+    color: $color-pink;
     font-weight: bold;
 }
 
@@ -263,7 +263,7 @@
         font-size: 3.5rem;
         font-weight: 900;
         margin-bottom: 0.75rem;
-        background: linear-gradient(135deg, $color-blue-light 0%, $color-teal 100%);
+        background: linear-gradient(135deg, $color-purple 0%, $color-pink 50%, $color-green 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -272,9 +272,9 @@
 
         &::before {
             content: '$ ';
-            color: $color-emerald;
+            color: $color-green;
             opacity: 0.7;
-            -webkit-text-fill-color: $color-emerald;
+            -webkit-text-fill-color: $color-green;
         }
     }
 
@@ -333,11 +333,11 @@
     padding: 0.75rem;
     border-radius: $border-radius-md;
     border: 1px solid $color-border;
-    border-left: 3px solid $color-blue;
+    border-left: 3px solid $color-purple;
 }
 
 .example-title {
-    color: $color-blue-light;
+    color: $color-purple-light;
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -369,7 +369,7 @@
 
 .features-title {
     font-size: 2rem;
-    color: $color-blue-light;
+    color: $color-purple-light;
     font-weight: 700;
     margin-bottom: $spacing-sm;
 
@@ -410,17 +410,17 @@
   --term-color-1: #F43F5E;
   --term-color-2: #10B981;
   --term-color-3: #F59E0B;
-  --term-color-4: #3B82F6;
-  --term-color-5: #8B5CF6;
-  --term-color-6: #06B6D4;
+  --term-color-4: #7c3aed;
+  --term-color-5: #d946ef;
+  --term-color-6: #a78bfa;
   --term-color-7: hsl(0, 0%, 85%);
   --term-color-8: hsl(0, 0%, 30%);
   --term-color-9: #F87171;
   --term-color-10: #34D399;
   --term-color-11: #FBBF24;
-  --term-color-12: #60A5FA;
-  --term-color-13: #A78BFA;
-  --term-color-14: #22D3EE;
+  --term-color-12: #a78bfa;
+  --term-color-13: #d946ef;
+  --term-color-14: #c084fc;
   --term-color-15: hsl(0, 0%, 100%);
 }
 
@@ -433,7 +433,7 @@
 }
 
 .cast-container {
-    background: linear-gradient(135deg, rgba($color-blue, 0.1) 0%, rgba($color-teal, 0.1) 100%);
+    background: linear-gradient(135deg, rgba($color-purple, 0.1) 0%, rgba($color-pink, 0.1) 100%);
     border-radius: 10px;
     padding: 10px;
     box-shadow: $shadow-md;
@@ -463,7 +463,7 @@ div.ap-wrapper div.ap-player {
     container-type: inline-size;
     width: 100%;
     max-height: 500px;
-    background: linear-gradient(135deg, rgba($color-blue, 0.1) 0%, rgba($color-teal, 0.1) 100%);
+    background: linear-gradient(135deg, rgba($color-purple, 0.1) 0%, rgba($color-pink, 0.1) 100%);
     border-radius: 10px;
     display: flex;
     padding: 10px;
@@ -480,7 +480,7 @@ div.ap-wrapper div.ap-player {
   }
 
   a {
-    color: $color-emerald;
+    color: $color-green;
   }
   a:hover {
     color: $color-text-primary;
@@ -490,7 +490,7 @@ div.ap-wrapper div.ap-player {
 .image-placeholder {
     width: 100%;
     height: 300px;
-    background: linear-gradient(135deg, rgba($color-blue, 0.08) 0%, rgba($color-teal, 0.08) 100%);
+    background: linear-gradient(135deg, rgba($color-purple, 0.08) 0%, rgba($color-pink, 0.08) 100%);
     border: 2px dashed $color-border;
     border-radius: $border-radius-lg;
     display: flex;
@@ -502,8 +502,8 @@ div.ap-wrapper div.ap-player {
     transition: $transition-medium;
 
     &:hover {
-        border-color: $color-blue;
-        background: linear-gradient(135deg, rgba($color-blue, 0.12) 0%, rgba($color-teal, 0.12) 100%);
+        border-color: $color-purple;
+        background: linear-gradient(135deg, rgba($color-purple, 0.12) 0%, rgba($color-pink, 0.12) 100%);
     }
 }
 
@@ -522,7 +522,7 @@ div.ap-wrapper div.ap-player {
   border-radius: $border-radius-md;
 
   a {
-    color: $color-emerald;
+    color: $color-green;
   }
   a:hover {
     color: $color-text-primary;
@@ -543,13 +543,13 @@ div.ap-wrapper div.ap-player {
 .feature-title {
     font-size: 1.55rem;
     font-weight: 700;
-    color: $color-blue-light;
+    color: $color-purple-light;
     margin-bottom: $spacing-lg;
     line-height: 1.2;
 
     &::before {
         content: '$ ';
-        color: $color-emerald;
+        color: $color-green;
         font-family: $font-mono;
     }
 }
@@ -624,7 +624,7 @@ div.ap-wrapper div.ap-player {
 
 .install-title {
     font-size: 1.25rem;
-    color: $color-blue-light;
+    color: $color-purple-light;
     font-weight: 700;
     margin-bottom: 0.35rem;
 
@@ -660,15 +660,15 @@ div.ap-wrapper div.ap-player {
     transition: $transition-fast;
 
     &:hover {
-        border-color: $color-blue;
+        border-color: $color-purple;
         color: $color-text-primary;
-        background: rgba($color-blue, 0.08);
+        background: rgba($color-purple, 0.08);
     }
 
     &.active {
-        background: linear-gradient(135deg, rgba($color-blue, 0.15) 0%, rgba($color-teal, 0.1) 100%);
-        border-color: $color-blue;
-        color: $color-emerald;
+        background: linear-gradient(135deg, rgba($color-purple, 0.15) 0%, rgba($color-pink, 0.1) 100%);
+        border-color: $color-purple;
+        color: $color-green;
         font-weight: 600;
         box-shadow: $shadow-sm;
     }
@@ -722,7 +722,7 @@ div.ap-wrapper div.ap-player {
 .command-text {
     flex: 1;
     user-select: all;
-    color: $color-emerald;
+    color: $color-green;
     font-family: $font-mono;
     font-weight: 500;
 }
@@ -730,7 +730,7 @@ div.ap-wrapper div.ap-player {
 .download-btn {
     display: inline-block;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, $color-blue 0%, $color-teal 100%);
+    background: linear-gradient(135deg, $color-purple 0%, $color-pink 100%);
     color: #ffffff;
     font-family: $font-mono;
     font-size: 0.95rem;
@@ -744,7 +744,7 @@ div.ap-wrapper div.ap-player {
     &:hover {
         transform: translateY(-2px);
         box-shadow: $shadow-lg;
-        border-color: $color-emerald;
+        border-color: $color-green;
     }
 }
 
