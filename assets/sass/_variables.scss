@@ -1,23 +1,26 @@
-// Dracula Color Palette
-$color-bg-dark: #0d0d0d;
-$color-bg-panel: #1a1a1a;
-$color-bg-black: #000;
-$color-bg-input: #282a36;
+// Modern Dark Color Palette
+$color-bg-dark: #0F1419;
+$color-bg-panel: #1A1F2E;
+$color-bg-elevated: #242B3D;
+$color-bg-input: #1E2530;
 
-$color-text-primary: #f8f8f2;
-$color-text-muted: #6272a4;
+$color-text-primary: #E6EDF3;
+$color-text-secondary: #C9D1D9;
+$color-text-muted: #7D8590;
 
-$color-border: #333;
+$color-border: #30363D;
+$color-border-subtle: #21262D;
 
-$color-purple: #bd93f9;
-$color-pink: #ff79c6;
-$color-green: #50fa7b;
-$color-cyan: #8be9fd;
-$color-yellow: #f1fa8c;
-$color-red: #ff5555;
+// Modern Accent Colors
+$color-blue: #3B82F6;
+$color-blue-light: #60A5FA;
+$color-teal: #06B6D4;
+$color-emerald: #10B981;
+$color-amber: #F59E0B;
+$color-rose: #F43F5E;
 
 // Typography
-$font-mono: 'Monaco', 'Menlo', 'Courier New', monospace;
+$font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Cascadia Code', 'Menlo', 'Consolas', monospace;
 $font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 
 // Spacing
@@ -30,9 +33,16 @@ $spacing-2xl: 2rem;
 $spacing-3xl: 3rem;
 
 // Borders
-$border-radius-sm: 4px;
-$border-radius-md: 6px;
-$border-radius-lg: 8px;
+$border-radius-sm: 6px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
 
 // Breakpoints
 $breakpoint-sm: 640px;

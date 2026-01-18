@@ -61,7 +61,7 @@
 }
 
 .input-list {
-    background: $color-bg-black;
+    background: $color-bg-dark;
     border: 1px solid $color-border;
     border-radius: $border-radius-sm;
     padding: 0.75rem;
@@ -114,14 +114,14 @@
         width: 16px;
         height: 16px;
         cursor: pointer;
-        accent-color: $color-purple;
+        accent-color: $color-blue;
     }
 }
 
 .delete-btn {
     background: transparent;
     border: none;
-    color: $color-red;
+    color: $color-rose;
     cursor: pointer;
     font-size: 1.2rem;
     padding: 0;
@@ -134,15 +134,15 @@
     transition: $transition-fast;
 
     &:hover {
-        background: $color-red;
+        background: $color-rose;
         color: #fff;
     }
 }
 
 .add-input-btn-inline {
-    background: $color-green;
+    background: $color-emerald;
     border: none;
-    color: $color-bg-input;
+    color: #ffffff;
     padding: 0.4rem 0.75rem;
     border-radius: $border-radius-sm;
     cursor: pointer;
@@ -151,7 +151,7 @@
     transition: $transition-fast;
 
     &:hover {
-        background: #69ffac;
+        background: #34D399;
     }
 }
 
@@ -180,9 +180,9 @@ textarea {
 }
 
 .preview-container {
-    background: $color-bg-black;
+    background: $color-bg-dark;
     border: 1px solid $color-border;
-    border-radius: $border-radius-sm;
+    border-radius: $border-radius-md;
     padding: $spacing-lg;
     font-family: $font-mono;
     font-size: 0.75rem;
@@ -192,6 +192,7 @@ textarea {
     min-height: 400px;
     max-height: 600px;
     overflow-y: auto;
+    box-shadow: $shadow-sm;
 
     pre {
         margin: 0;

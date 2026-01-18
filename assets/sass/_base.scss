@@ -9,24 +9,7 @@ body {
     background: $color-bg-dark;
     color: $color-text-primary;
     min-height: 100vh;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.03) 0px,
-        transparent 1px,
-        transparent 2px,
-        rgba(255, 255, 255, 0.03) 3px
-    );
-    pointer-events: none;
-    z-index: 0;
+    line-height: 1.6;
 }
 
 .container {
@@ -51,42 +34,44 @@ footer {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-mono;
-    color: $color-purple;
+    color: $color-text-primary;
+    line-height: 1.2;
+    font-weight: 600;
 }
 
 a {
-    color: $color-purple;
+    color: $color-blue-light;
     text-decoration: none;
     transition: $transition-fast;
 
     &:hover {
-        color: $color-pink;
+        color: $color-blue;
     }
 }
 
 select, input[type="text"], input[type="email"], textarea {
     width: 100%;
-    background: $color-bg-black;
+    background: $color-bg-input;
     border: 1px solid $color-border;
-    border-radius: $border-radius-sm;
+    border-radius: $border-radius-md;
     color: $color-text-primary;
-    padding: 0.6rem 0.75rem;
-    font-size: 0.85rem;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.875rem;
     font-family: $font-mono;
     transition: $transition-fast;
 
     &:hover {
-        border-color: $color-purple;
+        border-color: $color-blue;
     }
 
     &:focus {
         outline: none;
-        border-color: $color-purple;
-        box-shadow: 0 0 0 2px rgba(189, 147, 249, 0.2);
+        border-color: $color-blue;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
     }
 
     &:disabled {
-        opacity: 0.3;
+        opacity: 0.4;
         cursor: not-allowed;
     }
 }

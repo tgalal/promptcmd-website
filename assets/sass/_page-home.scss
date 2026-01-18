@@ -1,10 +1,10 @@
 // Home Page Styles
 
 .comparison-section {
-    background: linear-gradient(135deg, rgba($color-purple, 0.08) 0%, rgba($color-green, 0.08) 100%);
+    background: linear-gradient(135deg, rgba($color-blue, 0.05) 0%, rgba($color-teal, 0.05) 100%);
     padding: $spacing-3xl 0;
     margin-top: $spacing-3xl;
-    box-shadow: inset 0 2px 20px rgba($color-green, 0.1);
+    box-shadow: inset 0 2px 20px rgba($color-teal, 0.08);
 }
 
 .comparison-wrapper {
@@ -16,7 +16,7 @@
 .comparison-title {
     text-align: center;
     font-size: 2rem;
-    color: $color-green;
+    color: $color-blue-light;
     font-weight: 700;
     margin-bottom: $spacing-2xl;
 
@@ -45,8 +45,8 @@
     font-size: 0.9rem;
 
     thead {
-        background: linear-gradient(135deg, rgba($color-purple, 0.3) 0%, rgba($color-pink, 0.2) 100%);
-        border-bottom: 2px solid $color-purple;
+        background: linear-gradient(135deg, rgba($color-blue, 0.15) 0%, rgba($color-teal, 0.1) 100%);
+        border-bottom: 2px solid $color-blue;
 
         th {
             padding: $spacing-lg $spacing-md;
@@ -56,16 +56,16 @@
             font-family: $font-mono;
 
             &.feature-col {
-                color: $color-purple;
+                color: $color-blue-light;
                 font-size: 1rem;
             }
 
             &.tool-col {
-                color: $color-green;
+                color: $color-emerald;
                 text-align: center;
 
                 a {
-                  color: $color-green;
+                  color: $color-emerald;
                   font-weight: normal;
 
                   &:hover {
@@ -82,7 +82,7 @@
             transition: $transition-fast;
 
             &:hover {
-                background: rgba($color-purple, 0.05);
+                background: rgba($color-blue, 0.04);
             }
 
             &:last-child {
@@ -96,7 +96,7 @@
 
             &.feature-name {
                 font-weight: 600;
-                color: $color-pink;
+                color: $color-blue-light;
                 font-family: $font-mono;
                 font-size: 0.85rem;
             }
@@ -120,13 +120,13 @@
 }
 
 .check-yes {
-    color: $color-green;
+    color: $color-emerald;
     font-weight: bold;
     font-size: 1.2rem;
 }
 
 .check-no {
-    color: #ff5555;
+    color: $color-rose;
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -167,19 +167,19 @@
     border-radius: $border-radius-lg;
     padding: $spacing-3xl $spacing-2xl;
     border: 1px solid $color-border;
-    box-shadow: 0 0 60px rgba(189, 147, 249, 0.15);
+    box-shadow: $shadow-lg;
 }
 
 .cta-title {
     font-size: 2rem;
-    color: $color-purple;
+    color: $color-blue-light;
     font-weight: 700;
     margin-bottom: $spacing-md;
     line-height: 1.2;
 
     &::before {
         content: '$ ';
-        color: $color-green;
+        color: $color-emerald;
         font-family: $font-mono;
     }
 }
@@ -206,10 +206,10 @@
     align-items: center;
     gap: $spacing-sm;
     padding: $spacing-md $spacing-lg;
-    background: $color-bg-black;
+    background: $color-bg-elevated;
     border: 1px solid $color-border;
     border-radius: $border-radius-md;
-    color: $color-green;
+    color: $color-emerald;
     font-family: $font-mono;
     font-size: 0.9rem;
     font-weight: 600;
@@ -218,11 +218,11 @@
     justify-content: center;
 
     &:hover {
-        border-color: $color-purple;
-        background: rgba($color-purple, 0.1);
-        color: $color-pink;
+        border-color: $color-blue;
+        background: rgba($color-blue, 0.1);
+        color: $color-blue-light;
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(189, 147, 249, 0.2);
+        box-shadow: $shadow-md;
 
         .cta-link-icon {
             transform: translateX(4px);
@@ -232,7 +232,7 @@
 
 .cta-link-icon {
     transition: $transition-fast;
-    color: $color-pink;
+    color: $color-teal;
     font-weight: bold;
 }
 
@@ -263,7 +263,7 @@
         font-size: 3.5rem;
         font-weight: 900;
         margin-bottom: 0.75rem;
-        background: linear-gradient(135deg, $color-purple 0%, $color-pink 50%, $color-green 100%);
+        background: linear-gradient(135deg, $color-blue-light 0%, $color-teal 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -272,9 +272,9 @@
 
         &::before {
             content: '$ ';
-            color: $color-green;
+            color: $color-emerald;
             opacity: 0.7;
-            -webkit-text-fill-color: $color-green;
+            -webkit-text-fill-color: $color-emerald;
         }
     }
 
@@ -329,15 +329,15 @@
 }
 
 .example {
-    background: $color-bg-black;
+    background: $color-bg-dark;
     padding: 0.75rem;
     border-radius: $border-radius-md;
     border: 1px solid $color-border;
-    border-left: 3px solid $color-pink;
+    border-left: 3px solid $color-blue;
 }
 
 .example-title {
-    color: $color-pink;
+    color: $color-blue-light;
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -369,7 +369,7 @@
 
 .features-title {
     font-size: 2rem;
-    color: $color-pink;
+    color: $color-blue-light;
     font-weight: 700;
     margin-bottom: $spacing-sm;
 
@@ -404,24 +404,23 @@
     }
 }
 .asciinema-player-theme-mytheme {
-  --term-color-foreground: #cccccc;
-  --term-color-background: #121314;
+  --term-color-foreground: #E6EDF3;
+  --term-color-background: #0F1419;
   --term-color-0: hsl(0, 0%, 0%);
-  // --term-color-1: hsl(343, 70%, 55%);
-  --term-color-1: #50fa7b;
-  --term-color-2: hsl(103, 70%, 44%);
-  --term-color-3: hsl(43, 70%, 55%);
-  --term-color-4: #bd93f9;
-  --term-color-5: hsl(283, 70%, 60.5%);
-  --term-color-6: hsl(163, 70%, 60.5%);
+  --term-color-1: #F43F5E;
+  --term-color-2: #10B981;
+  --term-color-3: #F59E0B;
+  --term-color-4: #3B82F6;
+  --term-color-5: #8B5CF6;
+  --term-color-6: #06B6D4;
   --term-color-7: hsl(0, 0%, 85%);
   --term-color-8: hsl(0, 0%, 30%);
-  --term-color-9: hsl(343, 70%, 55%);
-  --term-color-10: hsl(103, 70%, 44%);
-  --term-color-11: hsl(43, 70%, 55%);
-  --term-color-12: hsl(193, 70%, 49.5%);
-  --term-color-13: hsl(283, 70%, 60.5%);
-  --term-color-14: hsl(163, 70%, 60.5%);
+  --term-color-9: #F87171;
+  --term-color-10: #34D399;
+  --term-color-11: #FBBF24;
+  --term-color-12: #60A5FA;
+  --term-color-13: #A78BFA;
+  --term-color-14: #22D3EE;
   --term-color-15: hsl(0, 0%, 100%);
 }
 
@@ -434,12 +433,10 @@
 }
 
 .cast-container {
-  // width: 100%;
-    background: linear-gradient(135deg, rgba($color-purple, 0.2) 0%, rgba($color-pink, 0.2) 100%);
-    // box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.25);
-    // box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, rgba($color-blue, 0.1) 0%, rgba($color-teal, 0.1) 100%);
     border-radius: 10px;
     padding: 10px;
+    box-shadow: $shadow-md;
 }
 
 div.ap-term {
@@ -466,37 +463,34 @@ div.ap-wrapper div.ap-player {
     container-type: inline-size;
     width: 100%;
     max-height: 500px;
-    background: linear-gradient(135deg, rgba($color-purple, 0.2) 0%, rgba($color-pink, 0.2) 100%);
+    background: linear-gradient(135deg, rgba($color-blue, 0.1) 0%, rgba($color-teal, 0.1) 100%);
     border-radius: 10px;
     display: flex;
     padding: 10px;
-    color: #cccccc;
-    font-family: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace, "Symbols Nerd Font";
-
+    color: $color-text-secondary;
+    font-family: "Cascadia Code", "JetBrains Mono", "Fira Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    box-shadow: $shadow-md;
 }
 
 .code-container pre {
-  // font-size: 0.7rem;
-  // font-size: clamp(0.3rem, 5cqi, 0.7rem);
   font-size: clamp(0.4rem, 2cqi, 2.7rem);
 
   span.comment {
-    color: #946591;
+    color: $color-text-muted;
   }
-
 
   a {
-    color: $color-green;
+    color: $color-emerald;
   }
   a:hover {
-    color: white;
+    color: $color-text-primary;
   }
 }
 
 .image-placeholder {
     width: 100%;
     height: 300px;
-    background: linear-gradient(135deg, rgba($color-purple, 0.2) 0%, rgba($color-pink, 0.2) 100%);
+    background: linear-gradient(135deg, rgba($color-blue, 0.08) 0%, rgba($color-teal, 0.08) 100%);
     border: 2px dashed $color-border;
     border-radius: $border-radius-lg;
     display: flex;
@@ -508,8 +502,8 @@ div.ap-wrapper div.ap-player {
     transition: $transition-medium;
 
     &:hover {
-        border-color: $color-purple;
-        background: linear-gradient(135deg, rgba($color-purple, 0.3) 0%, rgba($color-pink, 0.3) 100%);
+        border-color: $color-blue;
+        background: linear-gradient(135deg, rgba($color-blue, 0.12) 0%, rgba($color-teal, 0.12) 100%);
     }
 }
 
@@ -522,15 +516,16 @@ div.ap-wrapper div.ap-player {
 .sub-code {
   padding: 14px;
   margin-top: 10px;
-  background: #181818;
-  color: #b1b1b1;
+  background: $color-bg-dark;
+  color: $color-text-secondary;
   font-family: $font-mono;
+  border-radius: $border-radius-md;
 
   a {
-    color: $color-green;
+    color: $color-emerald;
   }
   a:hover {
-    color: white;
+    color: $color-text-primary;
   }
 
   &::before {
@@ -548,13 +543,13 @@ div.ap-wrapper div.ap-player {
 .feature-title {
     font-size: 1.55rem;
     font-weight: 700;
-    color: $color-purple;
+    color: $color-blue-light;
     margin-bottom: $spacing-lg;
     line-height: 1.2;
 
     &::before {
         content: '$ ';
-        color: $color-green;
+        color: $color-emerald;
         font-family: $font-mono;
     }
 }
@@ -619,7 +614,7 @@ div.ap-wrapper div.ap-player {
     padding: 1.75rem;
     margin-bottom: $spacing-2xl;
     border: 1px solid $color-border;
-    box-shadow: 0 0 40px rgba(189, 147, 249, 0.1);
+    box-shadow: $shadow-md;
 }
 
 .install-header {
@@ -629,7 +624,7 @@ div.ap-wrapper div.ap-player {
 
 .install-title {
     font-size: 1.25rem;
-    color: $color-purple;
+    color: $color-blue-light;
     font-weight: 700;
     margin-bottom: 0.35rem;
 
@@ -654,7 +649,7 @@ div.ap-wrapper div.ap-player {
 
 .platform-tab {
     padding: 0.5rem 1rem;
-    background: $color-bg-black;
+    background: $color-bg-elevated;
     border: 1px solid $color-border;
     border-radius: $border-radius-md;
     color: $color-text-muted;
@@ -665,17 +660,17 @@ div.ap-wrapper div.ap-player {
     transition: $transition-fast;
 
     &:hover {
-        border-color: $color-purple;
+        border-color: $color-blue;
         color: $color-text-primary;
-        background: rgba($color-purple, 0.1);
+        background: rgba($color-blue, 0.08);
     }
 
     &.active {
-        background: linear-gradient(135deg, rgba($color-purple, 0.3) 0%, rgba($color-pink, 0.2) 100%);
-        border-color: $color-purple;
-        color: $color-green;
+        background: linear-gradient(135deg, rgba($color-blue, 0.15) 0%, rgba($color-teal, 0.1) 100%);
+        border-color: $color-blue;
+        color: $color-emerald;
         font-weight: 600;
-        box-shadow: 0 2px 8px rgba(189, 147, 249, 0.2);
+        box-shadow: $shadow-sm;
     }
 }
 
@@ -715,27 +710,19 @@ div.ap-wrapper div.ap-player {
 .command-box {
     display: flex;
     align-items: center;
-    background: $color-bg-black;
+    background: $color-bg-dark;
     border-radius: $border-radius-lg;
     padding: 1.25rem;
     font-size: 1rem;
     border: 1px solid $color-border;
     position: relative;
-
-    /*&::before {
-        content: '$';
-        color: $color-green;
-        font-family: $font-mono;
-        font-weight: 700;
-        margin-right: 0.75rem;
-        opacity: 0.8;
-    }*/
+    box-shadow: $shadow-sm;
 }
 
 .command-text {
     flex: 1;
     user-select: all;
-    color: $color-green;
+    color: $color-emerald;
     font-family: $font-mono;
     font-weight: 500;
 }
@@ -743,8 +730,8 @@ div.ap-wrapper div.ap-player {
 .download-btn {
     display: inline-block;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, $color-purple 0%, $color-pink 100%);
-    color: $color-text-primary;
+    background: linear-gradient(135deg, $color-blue 0%, $color-teal 100%);
+    color: #ffffff;
     font-family: $font-mono;
     font-size: 0.95rem;
     font-weight: 600;
@@ -752,11 +739,12 @@ div.ap-wrapper div.ap-player {
     text-decoration: none;
     transition: $transition-fast;
     border: 1px solid transparent;
+    box-shadow: $shadow-sm;
 
     &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(189, 147, 249, 0.4);
-        border-color: $color-green;
+        box-shadow: $shadow-lg;
+        border-color: $color-emerald;
     }
 }
 
