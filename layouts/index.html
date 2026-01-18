@@ -7,8 +7,8 @@
       {{ partial "showcase.html" . }}
       <p class="subtitle">Create custom CLI commands powered by AI. No plugins, no friction. Just pure command-line magic.</p>
       <div class="header-links">
-          <a href="{{ "/creator/" | relURL }}" class="link-btn create">
-              Create Prompts
+          <a href="https://github.com/{{ .Site.Params.github_username }}/promptcmd" class="link-btn github" target="_blank" rel="noopener">
+              Getting Started
           </a>
           <a href="{{ "/lib/" | relURL }}" class="link-btn library">
               Browse Library
@@ -235,6 +235,71 @@ window.promptContents = {};
 window.promptContents["{{$prompt.filename}}"] = {{ $content }};
 {{ end }}
 
+// Auto-scroll showcase carousel on mobile
+(function() {
+    const container = document.querySelector('.header-showcase-container');
+    if (!container) return;
+
+    const items = container.querySelectorAll('.header-showcase-item');
+    if (items.length <= 1) return;
+
+    let currentIndex = 0;
+    let autoScrollTimer = null;
+    let userInteracting = false;
+
+    function scrollToIndex(index) {
+        if (index >= items.length) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = items.length - 1;
+        } else {
+            currentIndex = index;
+        }
+
+        const item = items[currentIndex];
+        const scrollPosition = item.offsetLeft - container.offsetLeft;
+        container.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+        });
+    }
+
+    function startAutoScroll() {
+        if (autoScrollTimer) clearInterval(autoScrollTimer);
+        autoScrollTimer = setInterval(() => {
+            if (!userInteracting) {
+                scrollToIndex(currentIndex + 1);
+            }
+        }, 3000);
+    }
+
+    // Detect user interaction
+    let scrollTimeout;
+    container.addEventListener('scroll', () => {
+        userInteracting = true;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            userInteracting = false;
+        }, 1000);
+    });
+
+    // Start auto-scroll only on mobile/tablet
+    if (window.innerWidth < 1025) {
+        startAutoScroll();
+    }
+
+    // Restart on resize if needed
+    window.addEventListener('resize', () => {
+        if (window.innerWidth < 1025) {
+            if (!autoScrollTimer) startAutoScroll();
+        } else {
+            if (autoScrollTimer) {
+                clearInterval(autoScrollTimer);
+                autoScrollTimer = null;
+            }
+        }
+    });
+})();
 
 </script>
 {{ end }}

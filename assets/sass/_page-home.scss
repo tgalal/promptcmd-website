@@ -154,7 +154,6 @@
 
 // CTA Section
 .cta-section {
-    padding: $spacing-3xl 0;
     margin-top: $spacing-3xl;
     margin-bottom: $spacing-3xl;
 }
@@ -439,7 +438,8 @@
 }
 
 .cast-container {
-    background: linear-gradient(135deg, rgba($color-purple, 0.1) 0%, rgba($color-pink, 0.1) 100%);
+    // background: linear-gradient(135deg, rgba($color-purple, 0.1) 0%, rgba($color-pink, 0.1) 100%);
+    background: linear-gradient(135deg, rgba($color-purple, 0.2) 0%, rgba($color-pink, 0.2) 100%);
     border-radius: 10px;
     padding: 10px;
     box-shadow: $shadow-md;
@@ -469,7 +469,8 @@ div.ap-wrapper div.ap-player {
     container-type: inline-size;
     width: 100%;
     max-height: 500px;
-    background: linear-gradient(135deg, rgba($color-purple, 0.1) 0%, rgba($color-pink, 0.1) 100%);
+    background: linear-gradient(135deg, rgba($color-purple, 0.2) 0%, rgba($color-pink, 0.2) 100%);
+    // background: linear-gradient(135deg, rgba($color-purple, 0.1) 0%, rgba($color-pink, 0.1) 100%);
     border-radius: 10px;
     display: flex;
     padding: 10px;
@@ -590,6 +591,36 @@ div.ap-wrapper div.ap-player {
         gap: $spacing-lg;
     }
 
+    .header-showcase-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 1rem;
+        padding: 0 $spacing-lg;
+        margin: 1.5rem 0;
+        max-width: 100%;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .header-showcase-item {
+        flex: 0 0 calc(100% - 2rem);
+        scroll-snap-align: center;
+        max-width: 600px;
+        min-width: 280px;
+    }
+
+    .header-showcase-code {
+        font-size: 0.75rem;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
     .feature-item {
         grid-template-columns: 1fr;
         gap: $spacing-xl;
@@ -648,6 +679,52 @@ div.ap-wrapper div.ap-player {
     .link-btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .header-showcase-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 1rem;
+        padding: 0 $spacing-lg;
+        margin: 1.5rem 0;
+        max-width: 100%;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .header-showcase-item {
+        flex: 0 0 calc(100% - 2rem);
+        scroll-snap-align: center;
+        min-width: 260px;
+    }
+
+    .header-showcase-item-code {
+        font-size: 0.7rem;
+    }
+
+    .header-showcase-code {
+        font-size: 0.7rem;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+
+        &::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $color-border;
+            border-radius: 2px;
+        }
+    }
+
+    .header-showcase-code-title {
+        font-size: 0.65rem;
     }
 
     .features-title {
@@ -833,12 +910,15 @@ div.ap-wrapper div.ap-player {
     }
 }
 
-.header-showcase-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 0.75rem;
-    margin: 2rem auto;
-    max-width: 900px;
+// Desktop only - grid layout
+@media (min-width: 1025px) {
+    .header-showcase-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 0.75rem;
+        margin: 2rem auto;
+        max-width: 900px;
+    }
 }
 
 .header-showcase-item {
@@ -858,7 +938,7 @@ div.ap-wrapper div.ap-player {
 
 .header-showcase-code-title {
     color: $color-text-muted;
-    font-size: 0.75rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 0.5rem;
@@ -874,6 +954,11 @@ div.ap-wrapper div.ap-player {
     margin: 0;
     line-height: 1.5;
     flex: 1;
+
+
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
 
     // Syntax highlighting
     .hl-yaml-sep {

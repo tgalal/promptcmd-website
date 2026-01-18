@@ -108,7 +108,7 @@ h1 {
 .action-btn, .copy-btn, .download-btn, .copy-snippet-btn, .import-snippet-btn {
     background: $color-purple;
     border: none;
-    color: #ffffff;
+    color: #000000;
     padding: 0.625rem $spacing-lg;
     border-radius: $border-radius-md;
     cursor: pointer;
@@ -118,8 +118,9 @@ h1 {
     box-shadow: $shadow-sm;
 
     &:hover {
-        background: $color-purple-light;
         box-shadow: $shadow-md;
+        color: #000000;
+        background: #ff79c6;
     }
 
     &.secondary {
@@ -130,13 +131,13 @@ h1 {
 
         &:hover {
             background: $color-green;
-            color: #ffffff;
+            color: #000000;
         }
     }
 
     &.copied {
         background: $color-green;
-        color: #ffffff;
+        color: #000000;
     }
 }
 
@@ -157,18 +158,18 @@ h1 {
 
     &:hover {
         background: $color-green;
-        color: #ffffff;
+        color: #000000;
     }
 
     &.copied {
         background: $color-green;
-        color: #ffffff;
+        color: #000000;
     }
 }
 
 .import-snippet-btn {
     background: $color-green;
-    color: #ffffff;
+    color: #000000;
     padding: $spacing-sm 0.75rem;
     font-size: 0.8rem;
     border: 1px solid $color-green;
@@ -180,7 +181,7 @@ h1 {
 
     &.copied {
         background: $color-green;
-        color: #ffffff;
+        color: #000000;
     }
 }
 

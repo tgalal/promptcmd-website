@@ -10,6 +10,7 @@ body {
     color: $color-text-primary;
     min-height: 100vh;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -19,6 +20,7 @@ body {
     z-index: 1;
     padding-left: $spacing-2xl;
     padding-right: $spacing-2xl;
+    overflow-x: hidden;
 }
 
 footer {
