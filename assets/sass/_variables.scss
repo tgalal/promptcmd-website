@@ -1,24 +1,24 @@
-// Modern Dark Color Palette
-$color-bg-dark: #0F1419;
-$color-bg-panel: #1A1F2E;
-$color-bg-elevated: #242B3D;
-$color-bg-input: #1E2530;
+// Official Dracula Color Palette (Darker Variant)
+$color-bg-dark: #191A21;
+$color-bg-panel: #21222C;
+$color-bg-elevated: #282A36;
+$color-bg-input: #44475A;
 
-$color-text-primary: #E6EDF3;
-$color-text-secondary: #C9D1D9;
-$color-text-muted: #7D8590;
+$color-text-primary: #F8F8F2;
+$color-text-secondary: #F8F8F2;
+$color-text-muted: #6272A4;
 
-$color-border: #30363D;
-$color-border-subtle: #21262D;
+$color-border: #44475A;
+$color-border-subtle: #21222C;
 
-// VitePress-Inspired Accent Colors
-$color-purple: #7c3aed;
-$color-purple-light: #a78bfa;
-$color-purple-dark: #5b21b6;
-$color-pink: #d946ef;
-$color-green: #10b981;
-$color-amber: #F59E0B;
-$color-rose: #F43F5E;
+// Dracula Accent Colors
+$color-purple: #bd93f9;
+$color-purple-light: #bd93f9;
+$color-pink: #ff79c6;
+$color-green: #50fa7b;
+$color-cyan: #8be9fd;
+$color-yellow: #f1fa8c;
+$color-red: #ff5555;
 
 // Typography
 $font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Cascadia Code', 'Menlo', 'Consolas', monospace;
