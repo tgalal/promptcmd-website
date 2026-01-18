@@ -785,3 +785,84 @@ div.ap-wrapper div.ap-player {
         font-size: 0.75rem;
     }
 }
+
+.header-showcase-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.5rem;
+    margin: 1rem auto;
+    max-width: 900px;
+}
+
+.header-showcase-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-showcase-item-code {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 0.65rem;
+    border-radius: $border-radius-sm;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-showcase-code-title {
+    color: $color-text-muted;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    font-family: $font-mono;
+}
+
+.header-showcase-code {
+    font-family: $font-mono;
+    color: $color-text-primary;
+    font-size: 0.75rem;
+    text-align: left;
+    margin: 0;
+    line-height: 1.5;
+    flex: 1;
+
+    // Syntax highlighting
+    .hl-yaml-sep {
+        color: #666;
+    }
+
+    .hl-key {
+        color: #7dd3fc; // light blue
+    }
+
+    .hl-type {
+        color: #a78bfa; // purple
+    }
+
+    .hl-comment {
+        color: #9ca3af; // gray
+    }
+
+    .hl-template {
+        color: #fbbf24; // amber
+    }
+
+    .hl-prompt {
+        color: #10b981; // green
+    }
+
+    .hl-flag {
+        color: #f472b6; // pink
+    }
+
+    .hl-label {
+        color: #a78bfa; // purple
+        font-weight: 600;
+    }
+
+    .hl-meta {
+        color: #6ee7b7; // light green
+    }
+}
