@@ -1,8 +1,7 @@
 // Header
 header {
-    padding: $spacing-lg 0 $spacing-lg;
-    border-bottom: 1px solid $color-border;
-    margin-bottom: $spacing-xl;
+    padding: $spacing-xl 0 $spacing-lg;
+    margin-bottom: $spacing-2xl;
 }
 
 .header-content {
@@ -45,12 +44,54 @@ h1 {
 }
 
 // Navigation
-.nav-links, .header-links {
+.nav-links {
+    display: flex;
+    gap: $spacing-lg;
+    align-items: center;
+}
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    padding: $spacing-sm $spacing-md;
+    background: transparent;
+    border: none;
+    color: $color-text-muted;
+    text-decoration: none;
+    font-family: $font-mono;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: $transition-fast;
+    position: relative;
+
+    &:hover {
+        color: $color-purple-light;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: $color-purple-light;
+        transition: $transition-fast;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.header-links {
     display: flex;
     gap: 0.75rem;
 }
 
-.nav-btn, .link-btn {
+.link-btn {
     display: inline-flex;
     align-items: center;
     gap: $spacing-sm;
