@@ -257,12 +257,17 @@
 
 .home-header {
     text-align: center;
-    padding: $spacing-2xl 0 $spacing-xl;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $spacing-3xl $spacing-2xl;
 
     h1 {
-        font-size: 3.5rem;
+        font-size: 5rem;
         font-weight: 900;
-        margin-bottom: 0.75rem;
+        margin-bottom: 1.5rem;
         background: linear-gradient(135deg, $color-purple 0%, $color-pink 50%, $color-green 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -279,26 +284,27 @@
     }
 
     .tagline {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         color: $color-text-primary;
-        margin-bottom: $spacing-sm;
+        margin-bottom: $spacing-lg;
         font-weight: 600;
     }
 
     .subtitle {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
         color: $color-text-muted;
-        max-width: 600px;
-        margin: 0 auto $spacing-lg;
-        line-height: 1.5;
+        max-width: 700px;
+        margin: 0 auto $spacing-3xl;
+        line-height: 1.6;
     }
 }
 
 .header-links {
     display: flex;
-    gap: $spacing-lg;
+    gap: $spacing-xl;
     justify-content: center;
-    margin-bottom: $spacing-2xl;
+    flex-wrap: wrap;
+    max-width: 800px;
 }
 
 .link-btn {
@@ -563,6 +569,27 @@ div.ap-wrapper div.ap-player {
 
 // Mobile responsive
 @media (max-width: $breakpoint-lg) {
+    .home-header {
+        min-height: 90vh;
+        padding: $spacing-2xl $spacing-lg;
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+        }
+    }
+
+    .header-links {
+        gap: $spacing-lg;
+    }
+
     .feature-item {
         grid-template-columns: 1fr;
         gap: $spacing-xl;
@@ -591,6 +618,38 @@ div.ap-wrapper div.ap-player {
 }
 
 @media (max-width: $breakpoint-md) {
+    .home-header {
+        min-height: 100vh;
+        padding: $spacing-xl $spacing-lg;
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            margin-bottom: $spacing-md;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            margin-bottom: $spacing-2xl;
+        }
+    }
+
+    .header-links {
+        flex-direction: column;
+        gap: $spacing-md;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .link-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
     .features-title {
         font-size: 1.5rem;
     }
@@ -777,8 +836,8 @@ div.ap-wrapper div.ap-player {
 .header-showcase-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 0.5rem;
-    margin: 1rem auto;
+    gap: 0.75rem;
+    margin: 2rem auto;
     max-width: 900px;
 }
 
@@ -788,10 +847,10 @@ div.ap-wrapper div.ap-player {
 }
 
 .header-showcase-item-code {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 0.5rem 0.65rem;
-    border-radius: $border-radius-sm;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.75rem 0.875rem;
+    border-radius: $border-radius-md;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -799,10 +858,10 @@ div.ap-wrapper div.ap-player {
 
 .header-showcase-code-title {
     color: $color-text-muted;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
     font-weight: 500;
     font-family: $font-mono;
 }
@@ -810,7 +869,7 @@ div.ap-wrapper div.ap-player {
 .header-showcase-code {
     font-family: $font-mono;
     color: $color-text-primary;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     text-align: left;
     margin: 0;
     line-height: 1.5;

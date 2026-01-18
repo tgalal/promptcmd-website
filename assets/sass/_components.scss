@@ -54,21 +54,22 @@ h1 {
     display: inline-flex;
     align-items: center;
     gap: $spacing-sm;
-    padding: $spacing-sm $spacing-lg;
+    padding: 0.875rem 1.75rem;
     background: $color-bg-elevated;
     border: 1px solid $color-border;
-    border-radius: $border-radius-md;
+    border-radius: $border-radius-lg;
     color: $color-text-primary;
     text-decoration: none;
     font-family: $font-mono;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
     transition: $transition-fast;
 
     &:hover {
         border-color: $color-purple;
         background: $color-bg-panel;
-        box-shadow: $shadow-sm;
-        transform: translateY(-1px);
+        box-shadow: $shadow-md;
+        transform: translateY(-2px);
     }
 }
 
