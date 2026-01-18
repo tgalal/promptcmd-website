@@ -1,5 +1,8 @@
 {{ define "main" }}
 <div class="container">
+  <div class="home-nav">
+      {{ partial "nav-links.html" . }}
+  </div>
   <div class="home-header">
       <h1>promptcmd</h1>
       <p class="tagline">GenAI prompts as runnable programs</p>
@@ -7,7 +10,7 @@
       {{ partial "showcase.html" . }}
       <p class="subtitle">Create custom CLI commands powered by AI. No plugins, no friction. Just pure command-line magic.</p>
       <div class="header-links">
-          <a href="https://github.com/{{ .Site.Params.github_username }}/promptcmd" class="link-btn github" target="_blank" rel="noopener">
+          <a href="#" class="link-btn github" target="_blank" rel="noopener">
               Getting Started
           </a>
           <a href="{{ "/lib/" | relURL }}" class="link-btn library">

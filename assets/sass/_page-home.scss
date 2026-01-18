@@ -254,6 +254,17 @@
     }
 }
 
+.home-nav {
+    padding: $spacing-xl $spacing-2xl $spacing-lg;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
 .home-header {
     text-align: center;
     min-height: 100vh;
@@ -894,6 +905,19 @@ div.ap-wrapper div.ap-player {
 }
 
 @media (max-width: $breakpoint-md) {
+    .home-nav {
+        padding-left: $spacing-lg;
+        padding-right: $spacing-lg;
+        position: relative;
+        padding-top: $spacing-lg;
+        padding-bottom: 0;
+    }
+
+    .home-header {
+        min-height: auto;
+        padding-top: $spacing-lg;
+    }
+
     .command-box {
         flex-direction: column;
         gap: $spacing-lg;
