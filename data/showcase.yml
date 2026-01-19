@@ -30,7 +30,7 @@
 
 
     ~
-- title: "Promptception"
+- title: "\"Promptception\""
   description: |
     Nest prompts within prompts for true <span class="emph">modularity</span>.
     Let each prompt do one thing well, then <span class="emph">compose</span>
@@ -51,13 +51,14 @@
     or actions to take.
 
     ## Postgres:
-    {{prompt "docker-inspect-logs" container="postgres"}}
+    {{prompt "<a href="javascript:void(0)" onclick="openModal('docker-inspect-logs')">docker-inspect-logs</a>" container="postgres"}}
 
     ## Nginx
-    {{prompt "docker-logs-analyzer" container="nginx"}}
+    {{prompt "<a href="javascript:void(0)" onclick="openModal('docker-inspect-logs')">docker-inspect-logs</a>" container="nginx"}}
 
     ## Redis
-    {{prompt "docker-logs-analyzer" container="redis"}}
+    {{prompt "<a href="javascript:void(0)" onclick="openModal('docker-inspect-logs')">docker-inspect-logs</a>" container="redis"}}
+    ~
 
 - title: "Distribute Usage"
   description: |

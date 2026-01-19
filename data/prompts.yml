@@ -1,22 +1,30 @@
-- name: How
-  filename: How.prompt
-  description: Ask "how" questions and get brief, straight-to-the-point answers from AI
-- name: docker-inspect-logs
-  filename: docker-inspect-logs.prompt
-  description: Analyze docker logs for a given container name and report problems
-- name: logs-aggregator
-  filename: logs-aggregator.prompt
-  description: Aggregate log reports from nested prompts
-- name: nginx-report
-  filename: nginx-report.prompt
-  description: Analyze nginx access logs to generate a structured markdown report
-- name: commitmsg
-  filename: commitmsg.prompt
-  description: Generate commit messages from git diffs in conventional or simple format
+- name: readforme.md
+  filename: readforme.md.prompt
+  description: Extract information from the README.md of a given repository name
 
 - name: render-md
   filename: render-md.prompt
   description: Render markdown content with different styles
+
+- name: translate
+  filename: translate.prompt
+  description: Translate text
+
+- name: docker-inspect-logs
+  filename: docker-inspect-logs.prompt
+  description: Analyze docker logs for a given container name and report problems
+
+- name: logs-aggregator
+  filename: logs-aggregator.prompt
+  description: Aggregate log reports from nested prompts
+
+- name: nginx-report
+  filename: nginx-report.prompt
+  description: Analyze nginx access logs to generate a structured markdown report
+
+- name: commitmsg
+  filename: commitmsg.prompt
+  description: Generate commit messages from git diffs in conventional or simple format
 
 - name: rust-coder
   filename: rust-coder.prompt
@@ -28,4 +36,8 @@
 
 - name: what
   filename: what.prompt
-  description: Ask "what" questions and get concise answers
+  description: Explain command errors and suggest solutions
+
+- name: How
+  filename: How.prompt
+  description: Ask "how" questions and get brief, straight-to-the-point answers from AI
