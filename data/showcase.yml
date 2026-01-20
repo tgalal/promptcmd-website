@@ -136,7 +136,3 @@
       resolve  Resolve model name
       config   Display and edit your config.toml
       help     Print this message or the help of the given subcommand(s)
-
-    Options:
-      -h, --help     Print help
-      -V, --version  Print version
