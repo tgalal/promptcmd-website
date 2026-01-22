@@ -1,4 +1,6 @@
 ---
+# Usage Example:
+# READFORME.md --repo tgalal/promptcmd --info summary
 input:
   schema:
     repo: string, The github repository name
