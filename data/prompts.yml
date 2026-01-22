@@ -1,10 +1,14 @@
-- name: readforme.md
-  filename: readforme.md.prompt
+- name: READFORME.md
+  filename: READFORME.md.prompt
   description: Extract information from the README.md of a given repository name
 
 - name: render-md
   filename: render-md.prompt
   description: Render markdown content with different styles
+
+- name: bashme_a_script_that
+  filename: bashme_a_script_that.prompt
+  description: Quick bash scripts
 
 - name: translate
   filename: translate.prompt

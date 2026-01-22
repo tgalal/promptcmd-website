@@ -1,0 +1,22 @@
+---
+# Usage Example:
+# bashme_a_script_that suffixes all files in current directory with .bak
+input:
+  schema:
+    query!: string, positional query. Can be spaced and with/without quotes
+    stdin: boolean, accept stdin input
+---
+Write me a bash script with the description below. Just give me the script,
+nothing else, no formatting, no markdown, no code fences and so on. JUST THE
+PURE BASH-COMPATIBLE OUTPUT as I will immediately execute it.
+
+Here is the description:
+
+{{query}}
+
+{{#if stdin}}
+Here are the relevant data:
+
+{{STDIN}}
+
+{{/if}}
