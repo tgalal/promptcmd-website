@@ -186,6 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('modelInput').style.display = 'none';
     renderAllPrompts();
 
+    // Apply query parameters BEFORE opening modal from hash
+    applyQueryParams();
+
     // Check for hash on page load to open modal from permalink
     if (window.location.hash && window.location.hash.length > 1) {
         const cleanName = window.location.hash.substring(1);
