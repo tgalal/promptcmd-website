@@ -185,10 +185,24 @@ document.addEventListener('DOMContentLoaded', () => {
     modelSelect.disabled = true;
     document.getElementById('modelInput').style.display = 'none';
     renderAllPrompts();
+
+    // Check for hash on page load to open modal from permalink
+    if (window.location.hash && window.location.hash.length > 1) {
+        const cleanName = window.location.hash.substring(1);
+        const filename = cleanName + '.prompt';
+        const index = window.promptsData.findIndex(p => p.filename === filename);
+        if (index !== -1) {
+            openModal(index, true);
+        } else {
+        }
+    }
 });
 
 // Modal functions
-function openModal(index) {
+let isModalOpen = false;
+let modalAddedToHistory = false; // Track if we added hash to history
+
+function openModal(index, skipHistory = false) {
     const meta = window.promptsData[index];
     const originalContent = window.promptContents[meta.filename];
     const updatedContent = updatePromptModel(originalContent, currentModel);
@@ -221,6 +235,16 @@ function openModal(index) {
 
     document.getElementById('promptModal').classList.add('active');
     document.body.classList.add('modal-open');
+    isModalOpen = true;
+
+    // Update URL with hash for shareable permalink
+    if (!skipHistory) {
+        const cleanName = meta.filename.replace('.prompt', '');
+        window.location.hash = cleanName;
+        modalAddedToHistory = true; // We added this to history
+    } else {
+        modalAddedToHistory = false; // Opened from permalink
+    }
 }
 
 function copyCurlCommand() {
@@ -230,9 +254,43 @@ function copyCurlCommand() {
 }
 
 function closeModal() {
+    if (!isModalOpen) return;
+
     document.getElementById('promptModal').classList.remove('active');
     document.body.classList.remove('modal-open');
+    isModalOpen = false;
+
+    // Remove hash from URL
+    if (window.location.hash) {
+        if (modalAddedToHistory) {
+            // We added the hash, so go back to remove it
+            history.back();
+        } else {
+            // Hash was already there (permalink), replace current history entry without adding new one
+            history.replaceState('', document.title, window.location.pathname + window.location.search);
+        }
+        modalAddedToHistory = false;
+    }
 }
+
+// Handle hash changes (back/forward navigation)
+window.addEventListener('hashchange', () => {
+    if (window.location.hash && window.location.hash.length > 1) {
+        // Hash indicates a prompt should be open
+        const cleanName = window.location.hash.substring(1);
+        const filename = cleanName + '.prompt';
+        const index = window.promptsData.findIndex(p => p.filename === filename);
+        if (index !== -1 && !isModalOpen) {
+            openModal(index, true); // skipHistory = true to avoid circular hash update
+        }
+    } else if (isModalOpen) {
+        // Hash removed by back button, close modal without modifying history again
+        document.getElementById('promptModal').classList.remove('active');
+        document.body.classList.remove('modal-open');
+        isModalOpen = false;
+        modalAddedToHistory = false;
+    }
+});
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
