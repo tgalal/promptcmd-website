@@ -408,13 +408,15 @@ footer {
     flex: 1;
     overflow-y: auto;
     padding: $spacing-xl;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-description {
     color: $color-text-muted;
-    margin-bottom: $spacing-xl;
     font-size: 0.95rem;
     line-height: 1.5;
+    margin-bottom: 10px;
 }
 
 .modal-section {
@@ -440,11 +442,15 @@ footer {
     line-height: 1.6;
     color: $color-text-primary;
     overflow-x: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 
     pre {
         margin: 0;
         white-space: pre-wrap;
         word-wrap: break-word;
+        flex: 1;
     }
 }
 
@@ -487,10 +493,14 @@ body.modal-open {
 }
 
 @media (max-width: $breakpoint-md) {
+    .modal-description {
+      margin-bottom: 0px;
+    }
     .modal-content {
         max-width: 95%;
-        max-height: 95vh;
-        margin: 2.5vh auto;
+        height: calc(100dvh - 2rem); /* Dynamic viewport height with margin */
+        max-height: calc(100dvh - 2rem);
+        margin: 1rem auto;
     }
 
     .modal-header,
@@ -501,5 +511,20 @@ body.modal-open {
 
     .modal-prompt-container {
         font-size: 0.8rem;
+        padding: $spacing-md;
+    }
+
+    .modal-header {
+        padding-bottom: $spacing-lg;
+        flex-shrink: 0;
+    }
+
+    .modal-body {
+        flex: 1;
+        min-height: 0; /* Important for flex child scrolling */
+    }
+
+    .modal-footer {
+        flex-shrink: 0;
     }
 }
