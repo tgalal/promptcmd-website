@@ -3,7 +3,7 @@ input:
   schema:
     repo: string, The github repository name
     info(enum, Which info is needed): [summary, installation, example, quickstart]
-    branch?: string, Branch name, defaults to "main">
+    branch?: string, Branch name, defaults to "main"
 ---
 You are a github README assistant. Your task is to extract the requested
 information from a given README content and summarize it in an accessible way,
