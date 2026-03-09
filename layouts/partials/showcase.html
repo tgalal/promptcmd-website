@@ -2,29 +2,27 @@
     <div class="header-showcase-item">
       <div class="header-showcase-item-code">
           <div class="header-showcase-code-title">Turn this</div>
-          <pre class="header-showcase-code"> $ ls myprompts/
+          <p style="white-space:normal; word-break: normal" class="header-showcase-code">
+Analyze /etc/config/nginx.conf as an expert sysadmin and security
+auditor. Identify misconfigurations, security risks, performance
+optimizations, and best practices violations. For each finding, state
+the setting, the impact, a fix, and a severity (Critical/Warning/Info).
 
-summarize_200words.txt
-summarize_400words.txt
-summarize_400words_simplified.txt
-summarize_400words_english.txt
-summarize_400words_german.txt
-</pre>
+</p>
       </div>
     </div>
     <div class="header-showcase-item">
       <div class="header-showcase-item-code">
           <div class="header-showcase-code-title">Into that</div>
-          <pre class="header-showcase-code"><span class="hl-prompt">$</span> summarize <span class="hl-flag">--help</span>
+          <pre class="header-showcase-code"><span class="hl-prompt">$</span> analyze-config <span class="hl-flag">--help</span>
 
-<span class="hl-label">Usage:</span> summarize <span class="hl-meta">[OPTIONS]</span> <span class="hl-flag">--to</span> <span class="hl-meta">&lt;to&gt;</span>
+<span class="hl-label">Usage:</span> analyze <span class="hl-meta">[OPTIONS]</span> <span class="hl-flag">--path</span> <span class="hl-meta">&lt;path&gt;</span>
 
 <span class="hl-label">Options:</span>
-<span class="hl-flag">--text</span> <span class="hl-meta">&lt;text&gt;</span>   Text to Summarize. Defaults to stdin
-<span class="hl-flag">--lang</span> <span class="hl-meta">&lt;lang&gt;</span>   Output in a given language
-<span class="hl-flag">--words</span> <span class="hl-meta">&lt;words&gt;</span> Summary length
-<span class="hl-flag">--style</span> <span class="hl-meta">&lt;style&gt;</span> [possible values: simplified, eli5]
-<span class="hl-flag">--dry</span>           Dry run
+<span class="hl-flag">--path</span> <span class="hl-meta">&lt;path&gt;</span>   Path to config. Defaults to stdin
+<span class="hl-flag">--syntax</span>        Syntax Checks
+<span class="hl-flag">--sec</span>           Security Checks
+<span class="hl-flag">--opt</span>           Optimization checks
 <span class="hl-flag">-h</span>, <span class="hl-flag">--help</span>      Print help</pre>
       </div>
     </div>

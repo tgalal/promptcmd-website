@@ -8,6 +8,30 @@
   sub: |
     <p class="sub-title">Start with:</p>
     <div class="sub-code">promptctl create <a href="javascript:void(0)" onclick="openModal('docker-inspect-logs')">docker-inspect-logs</a></div>
+- title: "Really, Anywhere"
+  description: |
+    Prefix your usual ssh command with promptctl. Your prompts magically
+    appear on the server, allowing you to bring your familiar workflows with you.
+  sub: |
+    <div class="sub-code">promptctl ssh user@server</div>
+  code: |
+    <span class="comment"># Create/import docker-inspect-logs on local host, then:</span>
+    sh-5.3$ promptctl ssh -p 2222 root@proxmox.lan
+    <span class="comment"># Logged In!</span>
+    root@proxmox.lan:~# docker-inspect-logs  --help
+    Usage: docker-inspect-logs [OPTIONS] --container <container>
+
+    Options:
+        --container <container>   Container name
+        --dry                     Dry run
+    -h, --help                    Print help
+
+
+
+
+
+
+    ~
 - title: "Built for the Command line"
   description: |
     <span class="emph">Pipe</span> command output directly into prompts, chain

@@ -71,3 +71,8 @@ features:
     runprompt: "yes"
     llm: "yes"
     claude_switcher: "yes"
+  - name: "SSH Integration"
+    promptcmd: "yes"
+    runprompt: "no"
+    llm: "no"
+    claude_switcher: "no"
